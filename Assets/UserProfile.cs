@@ -6,7 +6,7 @@ public class UserProfile
     public float speed, random, volume;
     public bool hand;
 
-    List<int> levelsComplete;
+    public List<int> levelsComplete;
 
     public UserProfile()
     {
@@ -15,5 +15,8 @@ public class UserProfile
         volume = .5f;
         hand = true;
         levelsComplete = new List<int>();
+        levelsComplete.Add(5);
+        levelsComplete.Add(15);
+        levelsComplete.Add(3);
     }
 }

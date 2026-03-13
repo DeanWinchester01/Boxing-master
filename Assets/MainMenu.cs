@@ -5,16 +5,21 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject settings;
     public GameObject playList;
-    UserProfile profile;
+
+    public static UserProfile profile;
     public void Quit()
     {
         Application.Quit();
     }
 
+    private void Start()
+    {
+        profile = new UserProfile();
+    }
+
     public void Settings()
     {
         settings.SetActive(true);
-        UserProfile profile = new UserProfile();
         settings.GetComponent<Settings>().Initialize(profile);
         gameObject.SetActive(false);
     }
