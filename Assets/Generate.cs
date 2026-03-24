@@ -9,9 +9,11 @@ public class Generate : MonoBehaviour
     public Transform spawnPos;
     public Transform targetPos;
 
-    public static int blocksHitCorrect = 0;
-    public static int blocksHitWrong = 0;
-    public static int consequtive = 0;
+    public int blocksHitCorrect = 0;
+    public int blocksHitWrong = 0;
+    public int blocksMissed = 0;
+    public int consequtive = 0;
+    public float accuracy;
 
     private void Start()
     {
@@ -35,7 +37,7 @@ public class Generate : MonoBehaviour
     {
         GameObject newObstacle = Instantiate(obstaclePrefab[0]);
         Obstacle ob = newObstacle.AddComponent<Obstacle>();
-        ob.Setup(spawnPos.position);
+        ob.Setup(spawnPos.position, this);
     }
 
     // Update is called once per frame

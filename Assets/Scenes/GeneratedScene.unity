@@ -415,9 +415,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   obstaclePrefab:
-  - {fileID: 6868611137116209547, guid: 97922e7d9af1edb4ebf695ebe7572eb4, type: 3}
+  - {fileID: 3014894314127246256, guid: a93db41cfc08dbb4f8b1aa1477cf4a0c, type: 3}
   spawnPos: {fileID: 812129221}
   targetPos: {fileID: 414265105}
+  blocksHitCorrect: 0
+  blocksHitWrong: 0
+  blocksMissed: 0
+  consequtive: 0
+  accuracy: 0
 --- !u!4 &1338049705
 Transform:
   m_ObjectHideFlags: 0
