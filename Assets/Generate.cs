@@ -14,6 +14,7 @@ public class Generate : MonoBehaviour
     public int blocksMissed = 0;
     public int consequtive = 0;
     public float accuracy;
+    public float eyeLevel;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class Generate : MonoBehaviour
             //print(i);
             //print("");
         }
+        eyeLevel = 1.7f;
     }
 
     void SpawnObstabacle()

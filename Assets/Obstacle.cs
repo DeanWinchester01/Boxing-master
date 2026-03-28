@@ -11,6 +11,15 @@ public class Obstacle : MonoBehaviour
 	float accuracy;
 	Generate parentCode;
 
+	void ColorBlock(Color color)
+	{
+		MeshRenderer renderer = GetComponent<MeshRenderer>();
+		for(int i = 0; i < renderer.materials.Length; i++)
+		{
+			renderer.materials[i].color = color;
+		}
+	}
+
 	public void Setup(Vector3 startPos, Generate parent)
 	{
 		parentCode = parent;
@@ -18,49 +27,54 @@ public class Obstacle : MonoBehaviour
 			print(punch);
 
 		transform.position = startPos;
-        transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -15);
+		//body.rotation
+
         switch (punch)
 		{
 			case 0:
 				print("jabb");
 				type = Punch.Jabb;
-				transform.rotation = Quaternion.identity;
-				//transform.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Jabb");
+				ColorBlock(Color.blue);
+				//transform.GetComponent<MeshRenderer>().material.color = Color.blue;
 				break;
 			case 1:
 				print("cross");
 				type = Punch.cross;
-                transform.position = startPos;
-                transform.rotation = Quaternion.identity;
-                //transform.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Cross");
+				transform.position = startPos;
+                ColorBlock(Color.green);
+                //transform.GetComponent<MeshRenderer>().material.color = Color.green;
                 break;
 			case 2:
 				print("lhook");
 				type = Punch.Lhook;
-                transform.position = startPos;
-                transform.rotation = Quaternion.identity;
-                //transform.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Lhook");
+                transform.position = startPos + new Vector3(-.5f,0,0);
+                transform.rotation = Quaternion.Euler(0, 180+45,0);
+                ColorBlock(Color.blue);
+                //transform.GetComponent<MeshRenderer>().material.color = Color.blue;
                 break;
 			case 3:
 				print("luppercut");
 				type = Punch.Luppercut;
                 transform.position = startPos;
-                transform.rotation = Quaternion.identity;
-                //transform.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Luppercut");
+                transform.rotation = Quaternion.Euler(45,180+0,0);
+                ColorBlock(Color.blue);
+                //transform.GetComponent<MeshRenderer>().material.color = Color.blue;
                 break;
 			case 4:
 				print("rhook");
 				type = Punch.Rhook;
                 transform.position = startPos;
-                transform.rotation = Quaternion.identity;
-                //transform.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Rhook");
+                transform.rotation = Quaternion.Euler(0,180-45,0);
+                ColorBlock(Color.green);
+                //transform.GetComponent<MeshRenderer>().material.color = Color.green;
                 break;
 			case 5:
 				print("ruppercut");
 				type = Punch.Ruppercut;
                 transform.position = startPos;
-                transform.rotation = Quaternion.identity;
-                //transform.GetComponent<MeshRenderer>().material = Resources.Load<Material>("Materials/Ruppercut");
+                transform.rotation = Quaternion.Euler(45,180 + 0,0);
+                ColorBlock(Color.green);
+                //transform.GetComponent<MeshRenderer>().material.color = Color.green;
                 break;
 					
 		}
@@ -68,6 +82,7 @@ public class Obstacle : MonoBehaviour
 
     private void FixedUpdate()
     {
+		transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -15);
 		if(transform.position.z < 0)
 		{
 			parentCode.blocksMissed += 1;
