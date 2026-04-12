@@ -96,14 +96,22 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-		if (collision.transform.name.Contains("Hand"))
+		if (collision.transform.name.Contains("Glove"))
 		{
+			HandTracker tracker = collision.transform.GetComponent<HandTracker>();
+			float speed = tracker.speed;
+
             parentCode.blocksHitCorrect += 1;
             parentCode.consequtive += 1;
 			dead = true;
 
 			accuracy = Vector3.Dot(transform.forward, (collision.transform.position - transform.position).normalized);
             parentCode.accuracy += accuracy;
+			Destroy(gameObject);
+		}
+		if(collision.transform.name == "Head")
+		{
+			parentCode.consequtive = 0;
 			Destroy(gameObject);
 		}
     }
