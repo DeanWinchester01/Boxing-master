@@ -78,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3077417560138949695}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5299141494311187587}
   m_SourcePrefab: {fileID: 100100000, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
 --- !u!1 &3014894314127246256 stripped
 GameObject:
@@ -132,3 +135,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 1.9999998, z: 1.9999998}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5299141494311187587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014894314127246256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc0e05c4b15ff641afe2e98514d5909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstacle
+  dead: 0
+  leftJabb: {x: 0, y: 0, z: 0}
+  rightJabb: {x: 0, y: 0, z: 0}
+  topLeft: {x: 0, y: 0, z: 0}
+  topRight: {x: 0, y: 0, z: 0}
+  bottomLeft: {x: 0, y: 0, z: 0}
+  bottomRight: {x: 0, y: 0, z: 0}
+  leftSmash: {x: 0, y: 0, z: 0}
+  rightSmash: {x: 0, y: 0, z: 0}

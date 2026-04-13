@@ -40,8 +40,9 @@ public class Generate : MonoBehaviour
     void SpawnObstabacle()
     {
         GameObject newObstacle = Instantiate(obstaclePrefab[0]);
-        Obstacle ob = newObstacle.AddComponent<Obstacle>();
-        ob.Setup(spawnPos.position, this);
+        newObstacle.GetComponent<Obstacle>().Setup(spawnPos.position, this);
+        //Obstacle ob = newObstacle.AddComponent<Obstacle>();
+        //ob.Setup(spawnPos.position, this);
     }
 
     // Update is called once per frame
