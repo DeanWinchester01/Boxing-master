@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 public class HandTracker : MonoBehaviour
 {
+    //public InputActionReference action;
+    public PlayerInput input;
     public Vector3 lastPos;
     public Vector3 newPos;
     public float speed;
@@ -10,6 +14,14 @@ public class HandTracker : MonoBehaviour
     public float updateInterval;
 
     float interval;
+
+    void OnActivate(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            print("pressed activate button");
+        }
+    }
     
     public void TrackHand()
     {
@@ -29,6 +41,21 @@ public class HandTracker : MonoBehaviour
         direction.Normalize();
         speed = (direction / interval).magnitude;
     }
+
+    void HandHit()
+    {
+        //device.SendHapticImpulse(0, 1, 0.1f);
+    }
+
+    private void Start()
+    {
+        //action.action.AddBinding("Press");
+        InputActionMap map = input.actions.FindActionMap("XRI Left Interaction");
+        InputAction action = map.FindAction("Select");
+        action.Enable();
+        
+    }
+    
 
     void FixedUpdate()
     {
