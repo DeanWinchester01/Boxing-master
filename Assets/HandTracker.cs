@@ -47,14 +47,7 @@ public class HandTracker : MonoBehaviour
         //device.SendHapticImpulse(0, 1, 0.1f);
     }
 
-    private void Start()
-    {
-        //action.action.AddBinding("Press");
-        InputActionMap map = input.actions.FindActionMap("XRI Left Interaction");
-        InputAction action = map.FindAction("Select");
-        action.Enable();
-        
-    }
+    
     
 
     void FixedUpdate()
