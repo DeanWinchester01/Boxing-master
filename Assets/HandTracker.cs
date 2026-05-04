@@ -16,13 +16,19 @@ public class HandTracker : MonoBehaviour
     //menu selector
     void OnActivate(InputValue value)
     {
+        print("pressed");
         if (value.isPressed)
         {
+            print(value.isPressed);
             RaycastHit buttonHit;
             if(Physics.Raycast(transform.position, transform.forward, out buttonHit, float.MaxValue))
             {
+                print("hit object");
+                print(buttonHit.transform);
                 if(buttonHit.transform.TryGetComponent<Button>(out Button b))
                 {
+                    print("hit button");
+                    print(b.transform);
                     b.onClick.Invoke();
                 }
             }
