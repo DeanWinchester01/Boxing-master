@@ -21,7 +21,7 @@ public class HandTracker : MonoBehaviour
         {
             print(value.isPressed);
             RaycastHit buttonHit;
-            if(Physics.Raycast(transform.position, transform.forward, out buttonHit, float.MaxValue))
+            if(Physics.Raycast(transform.position, transform.up, out buttonHit, float.MaxValue))
             {
                 print("hit object");
                 print(buttonHit.transform);
