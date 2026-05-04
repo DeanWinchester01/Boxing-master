@@ -1,11 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
-using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using UnityEngine.UI;
 public class HandTracker : MonoBehaviour
 {
-    //public InputActionReference action;
     public PlayerInput input;
     public Vector3 lastPos;
     public Vector3 newPos;
@@ -15,11 +12,20 @@ public class HandTracker : MonoBehaviour
 
     float interval;
 
+    
+    //menu selector
     void OnActivate(InputValue value)
     {
         if (value.isPressed)
         {
-            print("pressed activate button");
+            RaycastHit buttonHit;
+            if(Physics.Raycast(transform.position, transform.forward, out buttonHit, float.MaxValue))
+            {
+                if(buttonHit.transform.TryGetComponent<Button>(out Button b))
+                {
+                    b.onClick.Invoke();
+                }
+            }
         }
     }
     
