@@ -18,6 +18,8 @@ public class Playlist : MonoBehaviour
         for (int i = 0; i < levelsAvailable; i++)
         {
             GameObject level = Instantiate(levelButton);
+
+            level.GetComponent<Button>().onClick.AddListener(() => SceneLoader.LoadScene(i.ToString()));
             if (levels.Contains(i))
             {
                 level.GetComponent<Image>().color = Color.green;
@@ -38,11 +40,6 @@ public class Playlist : MonoBehaviour
             }
             //level.transform.parent = transform;
         }
-    }
-
-    void PositionMap(int x, int y, GameObject map)
-    {
-        
     }
 
     void Start()

@@ -7,7 +7,7 @@ public class SceneLoader : MonoBehaviour
     public string mainScene, generatedScene;
     public List<string> playListScenes;
 
-    public void LoadScene(string scene)
+    public static void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
