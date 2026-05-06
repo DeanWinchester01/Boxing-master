@@ -12,7 +12,7 @@ public class HandTracker : MonoBehaviour
 
     float interval;
 
-    
+    public LayerMask raycastlayer;
     //menu selector
     void OnActivate(InputValue value)
     {

@@ -2065,6 +2065,9 @@ MonoBehaviour:
   speed: 0
   direction: {x: 0, y: 0, z: 0}
   updateInterval: 0
+  raycastlayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &685259306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,6 +3025,9 @@ MonoBehaviour:
   speed: 0
   direction: {x: 0, y: 0, z: 0}
   updateInterval: 0
+  raycastlayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &854378496
 GameObject:
   m_ObjectHideFlags: 0
