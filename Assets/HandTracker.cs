@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class HandTracker : MonoBehaviour
 {
-    public PlayerInput input;
     public Vector3 lastPos;
     public Vector3 newPos;
     public float speed;
