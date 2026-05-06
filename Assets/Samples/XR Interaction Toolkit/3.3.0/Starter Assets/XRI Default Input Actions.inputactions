@@ -2140,6 +2140,17 @@
                 },
                 {
                     "name": "",
+                    "id": "75d4b71d-b823-405c-af48-ad30a56aa080",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "dd433817-216c-46b9-8dd3-f3a4ea1767b9",
                     "path": "<XRController>{RightHand}/{Grip}",
                     "interactions": "",
