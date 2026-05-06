@@ -47,7 +47,7 @@ public class HandTracker : MonoBehaviour
             Vector3 endPoint = buttonHit.point;
             float endPointDistance = (endPoint - transform.position).magnitude;
             ray.position = transform.position + direction * (endPointDistance / 2);
-            ray.localScale = new Vector3(.01f, endPointDistance, .01f);
+            ray.localScale = new Vector3(.01f, 0.01f, endPointDistance);
             ray.LookAt(endPoint);
         }
     }
