@@ -9,6 +9,7 @@ public class HandTracker : MonoBehaviour
     public float speed;
     public Vector3 direction;
     public float updateInterval;
+    public Transform ray;
 
     float interval;
 
@@ -22,7 +23,8 @@ public class HandTracker : MonoBehaviour
             print(value.isPressed);
             RaycastHit buttonHit;
             Debug.DrawRay(transform.position, transform.up);
-            if(Physics.Raycast(transform.position, transform.up, out buttonHit, float.MaxValue, raycastlayer))
+            Vector3 direction = (transform.up + transform.forward).normalized;
+            if(Physics.Raycast(transform.position, direction, out buttonHit, float.MaxValue, raycastlayer))
             {
                 print("hit object");
                 print(buttonHit.transform);
@@ -33,6 +35,21 @@ public class HandTracker : MonoBehaviour
                     b.onClick.Invoke();
                 }
             }
+        }
+    }
+
+    void DrawRay()
+    {
+        RaycastHit buttonHit;
+        //Debug.DrawRay(transform.position, transform.up);
+        Vector3 direction = (transform.up + transform.forward).normalized;
+        if (Physics.Raycast(transform.position, direction, out buttonHit, float.MaxValue, raycastlayer))
+        {
+            Vector3 endPoint = buttonHit.point;
+            float endPointDistance = (endPoint - transform.position).magnitude;
+            ray.position = transform.position + direction * (endPointDistance / 2);
+            ray.localScale = new Vector3(.01f, endPointDistance, .01f);
+            ray.LookAt(endPoint);
         }
     }
     
@@ -66,5 +83,6 @@ public class HandTracker : MonoBehaviour
     void FixedUpdate()
     {
         TrackHand();
+        DrawRay();
     }
 }
