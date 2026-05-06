@@ -2149,6 +2149,10 @@ PrefabInstance:
       value: RightGlove (5)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 22888fd8594e79043836e078bc97961e, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22888fd8594e79043836e078bc97961e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2218,13 +2222,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3d4ff751c244d43a120458990f90dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandTracker
-  input: {fileID: 0}
   lastPos: {x: 0, y: 0, z: 0}
   newPos: {x: 0, y: 0, z: 0}
   speed: 0
   direction: {x: 0, y: 0, z: 0}
   updateInterval: 0
-  ray: {fileID: 0}
+  ray: {fileID: 30103654}
   raycastlayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3179,7 +3182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3d4ff751c244d43a120458990f90dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandTracker
-  input: {fileID: 822041836}
   lastPos: {x: 0, y: 0, z: 0}
   newPos: {x: 0, y: 0, z: 0}
   speed: 0
