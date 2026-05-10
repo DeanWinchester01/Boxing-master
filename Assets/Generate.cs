@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static Obstacle;
 
 public class Generate : MonoBehaviour
 {
@@ -40,7 +41,31 @@ public class Generate : MonoBehaviour
     void SpawnObstabacle()
     {
         GameObject newObstacle = Instantiate(obstaclePrefab[0]);
-        newObstacle.GetComponent<Obstacle>().Setup(spawnPos.position, this);
+        int punch = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Punch)).Length);
+        Punch playerPunch = Punch.Jabb;
+        switch (punch)
+        {
+            case 0:
+                playerPunch = Punch.Jabb;
+                break;
+            case 1:
+                playerPunch = Punch.Cross;
+                break;
+            case 2:
+                playerPunch = Punch.Lhook;
+                break;
+            case 3:
+                playerPunch = Punch.Luppercut;
+                break;
+            case 4:
+                playerPunch = Punch.Rhook;
+                break;
+            case 5:
+                playerPunch = Punch.Ruppercut; 
+                break;
+
+        }
+        newObstacle.GetComponent<Obstacle>().Setup(spawnPos.position, playerPunch);
         //Obstacle ob = newObstacle.AddComponent<Obstacle>();
         //ob.Setup(spawnPos.position, this);
     }

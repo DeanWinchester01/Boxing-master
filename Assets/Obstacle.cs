@@ -30,20 +30,16 @@ public class Obstacle : MonoBehaviour
 		}
 	}
 
-	public void Setup(Vector3 startPos, Generate parent)
+	public void Setup(Vector3 startPos, Punch type)
 	{
-		parentCode = parent;
-		int punch = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Punch)).Length);
-			print(punch);
 
 		transform.position = startPos;
 		//body.rotation
 
-        switch (punch)
+        switch (type)
 		{
-			case 0:
+			case Punch.Jabb:
 				print("jabb");
-				type = Punch.Jabb;
 				if (MainMenu.profile.hand)
 				{
 					//right hand as main
@@ -57,9 +53,8 @@ public class Obstacle : MonoBehaviour
 					transform.position = startPos + rightJabb;
 				}
 					break;
-			case 1:
+			case Punch.Cross:
 				print("cross");
-				type = Punch.Cross;
 				if (MainMenu.profile.hand)
 				{
 					transform.position = startPos + rightSmash;
@@ -71,33 +66,29 @@ public class Obstacle : MonoBehaviour
 					ColorBlock(Color.green);
 				}
 					break;
-			case 2:
+			case Punch.Lhook:
 				print("lhook");
-				type = Punch.Lhook;
 				transform.position = startPos + leftJabb;
                 transform.rotation = Quaternion.Euler(0, 180+45,0);
                 ColorBlock(Color.blue);
                 //transform.GetComponent<MeshRenderer>().material.color = Color.blue;
                 break;
-			case 3:
+			case Punch.Luppercut:
 				print("luppercut");
-				type = Punch.Luppercut;
                 transform.position = startPos + topLeft;
                 transform.rotation = Quaternion.Euler(45,180+0,0);
                 ColorBlock(Color.blue);
                 //transform.GetComponent<MeshRenderer>().material.color = Color.blue;
                 break;
-			case 4:
+			case Punch.Rhook:
 				print("rhook");
-				type = Punch.Rhook;
                 transform.position = startPos + rightJabb;
                 transform.rotation = Quaternion.Euler(0,180-45,0);
                 ColorBlock(Color.green);
                 //transform.GetComponent<MeshRenderer>().material.color = Color.green;
                 break;
-			case 5:
+			case Punch.Ruppercut:
 				print("ruppercut");
-				type = Punch.Ruppercut;
                 transform.position = startPos + topRight;
                 transform.rotation = Quaternion.Euler(45,180 + 0,0);
                 ColorBlock(Color.green);

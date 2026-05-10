@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 39130693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 1.55, z: -5.32}
+  m_LocalPosition: {x: 0, y: 1.55, z: -5.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -256,8 +256,8 @@ Transform:
   m_GameObject: {fileID: 295862069}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 93.7}
-  m_LocalScale: {x: 5, y: 1, z: 200}
+  m_LocalPosition: {x: 0, y: 0, z: 34.2834}
+  m_LocalScale: {x: 5, y: 1, z: 81.16}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -526,10 +526,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf6ff9508ae72f4e80b64e67ca22b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  song: {fileID: 8300000, guid: 847fd9699db660d4982da9e9c2511183, type: 3}
+  song: {fileID: 8300000, guid: c6d2d60ed30b60e40a201a8ada56f39e, type: 3}
   source: {fileID: 1238438432}
-  punch: 
-  timeBetween: []
+  punch: 000000000000000000000000000000000000000000000000
+  timeBetween:
+  - 0.757
+  - 1.222
+  - 2.326
+  - 2.659
+  - 3.291
+  - 3.791
+  punchCube: {fileID: 0}
 --- !u!4 &1238438431
 Transform:
   m_ObjectHideFlags: 0
@@ -557,7 +564,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -667,7 +674,7 @@ Transform:
   m_GameObject: {fileID: 1538500690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: 1.29, z: 193.13}
+  m_LocalPosition: {x: 0.35, y: 1.29, z: 74.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
