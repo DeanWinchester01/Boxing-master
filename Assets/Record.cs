@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Record : MonoBehaviour
@@ -12,13 +14,21 @@ public class Record : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(Play());
+    }
+
+    IEnumerator Play()
+    {
+        yield return new WaitForSeconds(3);
         source.clip = clip;
+        source.Play();
         record = true;
     }
 
     void OnRecordButton()
     {
         //timeStamps.Add(time);
+        if (!record) return;
         print(time);
     }
 
