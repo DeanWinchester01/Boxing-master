@@ -1984,7 +1984,7 @@
                     "name": "Activate",
                     "type": "Button",
                     "id": "41976d89-60de-4deb-bff9-16b4af96b290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -3407,6 +3407,34 @@
                     "action": "Spawn Object",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "ComputerMap",
+            "id": "5c78c1bf-f8a2-4048-b422-089f7f63c980",
+            "actions": [
+                {
+                    "name": "RecordButton",
+                    "type": "Button",
+                    "id": "c8685ab2-8037-4ad5-a37d-3eb54d51efd7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "44891f24-f68f-42f6-a682-d68cbba8cd67",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RecordButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
