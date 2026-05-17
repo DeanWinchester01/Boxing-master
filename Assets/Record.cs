@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +9,25 @@ public class Record : MonoBehaviour
     public AudioSource source;
     public AudioClip clip;
     bool record = false;
-    public int timeStamp;
-    public Dictionary<int, float> stamps = new Dictionary<int, float>();
-    public List<float> timeStamps = new List<float>();
+    //public int timeStamp;
+    //public Dictionary<int, float> stamps = new Dictionary<int, float>();
+    //public List<float> timeStamps = new List<float>();
     float time;
 
-    List<TimeStamp> t = new List<TimeStamp>();
+    TimeStamp stamp;
 
     void Start()
     {
+        stamp = new TimeStamp();
         StartCoroutine(Play());
+    }
+
+    private void OnEnable()
+    {
+        TimeStamp loaded = Database.Load("TimeStamps");
+        stamp = loaded;
+
+        print(loaded);
     }
 
     IEnumerator Play()
@@ -27,26 +37,30 @@ public class Record : MonoBehaviour
         source.Play();
         record = true;
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(clip.length);
+
+        Database.Save("TimeStamps", stamp);
+        /*
         string save = t.ToString();
         print(save);
         string json = JsonUtility.ToJson(t);
         PlayerPrefs.SetString("TimeStamps", json);
         //print(save);
+        */
     }
 
     void OnRecordButton()
     {
         //timeStamps.Add(time);
         if (!record) return;
-        timeStamp++;
-        stamps.Add(timeStamp, time);
-        string newData = stamps.ToString();
-        print(newData);
-        TimeStamp newStamp = new TimeStamp();
-        newStamp.stamp = timeStamp;
-        newStamp.time = time;
-        t.Add(newStamp);
+        print(stamp != null);
+        print(time);
+        stamp.stamp.Add(time);
+        //string newData = stamps.ToString();
+        //print(newData);
+        //TimeStamp newStamp = new TimeStamp();
+        //newStamp.stamp.Add(time);
+        
         
         //timeStamps.Add(time);
         //print(time);
@@ -65,11 +79,5 @@ public class Record : MonoBehaviour
 [System.Serializable]
 public class TimeStamp
 {
-    public int stamp;
-    public float time;
-
-    public static TimeStamp CreateFromJSON(string jsonString)
-    {
-        return JsonUtility.FromJson<TimeStamp>(jsonString);
-    }
+    public List<float> stamp = new List<float>();
 }
