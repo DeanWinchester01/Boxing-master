@@ -30,12 +30,7 @@ public class Obstacle : MonoBehaviour
 		}
 	}
 
-	public void SetParent(Map parent)
-	{
-		secondParentCode = parent;
-		print(gameObject);
-		print(secondParentCode);
-	}
+	public void SetParent(Map parent) => secondParentCode = parent;
 
 	public void SetParent(Generate parent) => parentCode = parent;
 
@@ -47,7 +42,6 @@ public class Obstacle : MonoBehaviour
         switch (type)
 		{
 			case Punch.Jabb:
-				print("jabb");
 				if (/*MainMenu.profile.hand*/true) // force right hand for now
 				{
 					//right hand as main
@@ -62,7 +56,6 @@ public class Obstacle : MonoBehaviour
 				}
 					break;
 			case Punch.Cross:
-				print("cross");
 				if (/*MainMenu.profile.hand*/true) //force right hand for now
 				{
 					transform.position = startPos + rightSmash;
@@ -75,25 +68,21 @@ public class Obstacle : MonoBehaviour
 				}
 					break;
 			case Punch.Lhook:
-				print("lhook");
 				transform.position = startPos + leftJabb;
                 transform.rotation = Quaternion.Euler(0, 180+45,0);
                 ColorBlock(Color.blue);
                 break;
 			case Punch.Luppercut:
-				print("luppercut");
                 transform.position = startPos + topLeft;
                 transform.rotation = Quaternion.Euler(45,180+0,0);
                 ColorBlock(Color.blue);
                 break;
 			case Punch.Rhook:
-				print("rhook");
                 transform.position = startPos + rightJabb;
                 transform.rotation = Quaternion.Euler(0,180-45,0);
                 ColorBlock(Color.green);
                 break;
 			case Punch.Ruppercut:
-				print("ruppercut");
                 transform.position = startPos + topRight;
                 transform.rotation = Quaternion.Euler(45,180 + 0,0);
                 ColorBlock(Color.green);
@@ -115,8 +104,6 @@ public class Obstacle : MonoBehaviour
 			}
 			else
 			{
-				print(gameObject);
-				print(secondParentCode);
 				secondParentCode.blocksMissed += 1;
 				secondParentCode.consequtive = 0;
 			}
