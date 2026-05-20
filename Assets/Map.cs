@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[ExecuteInEditMode]
 public class Map : MonoBehaviour
 {
     public AudioClip song;
@@ -83,6 +83,6 @@ public class Map : MonoBehaviour
     }
     private void OnEnable()
     {
-        
+        LoadPunches();
     }
 }

@@ -19,7 +19,6 @@ public class Rainbow : MonoBehaviour
     {
         
         h += 0.001f;
-        print(h);
         Color newColor = Color.HSVToRGB(h, s, v);
         GetComponent<MeshRenderer>().material.color = newColor;
         //print(h);

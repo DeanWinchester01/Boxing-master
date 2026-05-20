@@ -66,6 +66,15 @@ public class Record : MonoBehaviour
         //print(time);
     }
 
+    void OnRestart()
+    {
+        print("restarting");
+        stamp.stamp = new List<float>();
+        time = 0;
+        record = false;
+        StartCoroutine(Play());
+    }
+
     // Update is called once per frame
     void Update()
     {

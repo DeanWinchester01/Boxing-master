@@ -3424,7 +3424,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Enter",
+                    "name": "Restart",
                     "type": "Button",
                     "id": "f840fb54-32c4-4842-bf7f-072639269d2f",
                     "expectedControlType": "",
@@ -3448,11 +3448,11 @@
                 {
                     "name": "",
                     "id": "bf6b49f0-b4b5-4625-b326-394bbdeaaf75",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Enter",
+                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
