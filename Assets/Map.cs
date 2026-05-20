@@ -12,6 +12,11 @@ public class Map : MonoBehaviour
     public List<float> timeStamps;
     public GameObject punchCube;
 
+    public int blocksMissed = 0;
+    public int consequtive = 0;
+    public int blocksHitCorrect = 0;
+    public float accuracy = 0;
+
     float playTime = 0;
     bool isPlaying = true;
 
@@ -22,10 +27,10 @@ public class Map : MonoBehaviour
 
     IEnumerator Play()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(0);
         isPlaying = true;
         source.clip = song;
-        source.pitch = MainMenu.profile.speed;
+        //source.pitch = MainMenu.profile.speed;
         source.Play();
     }
 
@@ -34,14 +39,17 @@ public class Map : MonoBehaviour
         
         GameObject newPunch = Instantiate(punchCube);
         Obstacle ob = newPunch.AddComponent<Obstacle>();
+        ob.SetParent(this);
         ob.Setup(transform.position, punch[0]);
         punch.RemoveAt(0);
+        print(ob.secondParentCode);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Application.isEditor) return;
+        //print(Application.isEditor);
+        //if (Application.isEditor) return;
         if (isPlaying)
             playTime += Time.deltaTime;
 
@@ -52,6 +60,7 @@ public class Map : MonoBehaviour
         }
     }
 
+    //Load punches in from system storage, only use during development
     void LoadPunches()
     {
         TimeStamp stamp = Database.Load("TimeStamps");

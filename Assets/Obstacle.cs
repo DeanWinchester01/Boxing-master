@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-
+#nullable enable
 public class Obstacle : MonoBehaviour
 {
-	Punch type;
 	public bool dead;
 	float accuracy;
-	Generate parentCode;
+	public Generate? parentCode;
+	public Map? secondParentCode;
 	[Space(10)]
 	public Vector3 leftJabb;
 	public Vector3 rightJabb;
@@ -30,9 +30,16 @@ public class Obstacle : MonoBehaviour
 		}
 	}
 
+	public void SetParent(Map parent)
+	{
+		secondParentCode = parent;
+		print(secondParentCode);
+	}
+
+	public void SetParent(Generate parent) => parentCode = parent;
+
 	public void Setup(Vector3 startPos, Punch type)
 	{
-
 		transform.position = startPos;
 		//body.rotation
 
@@ -40,7 +47,7 @@ public class Obstacle : MonoBehaviour
 		{
 			case Punch.Jabb:
 				print("jabb");
-				if (MainMenu.profile.hand)
+				if (/*MainMenu.profile.hand*/true) // force right hand for now
 				{
 					//right hand as main
 					ColorBlock(Color.blue);
@@ -55,7 +62,7 @@ public class Obstacle : MonoBehaviour
 					break;
 			case Punch.Cross:
 				print("cross");
-				if (MainMenu.profile.hand)
+				if (/*MainMenu.profile.hand*/true) //force right hand for now
 				{
 					transform.position = startPos + rightSmash;
 					ColorBlock(Color.green);
@@ -71,28 +78,24 @@ public class Obstacle : MonoBehaviour
 				transform.position = startPos + leftJabb;
                 transform.rotation = Quaternion.Euler(0, 180+45,0);
                 ColorBlock(Color.blue);
-                //transform.GetComponent<MeshRenderer>().material.color = Color.blue;
                 break;
 			case Punch.Luppercut:
 				print("luppercut");
                 transform.position = startPos + topLeft;
                 transform.rotation = Quaternion.Euler(45,180+0,0);
                 ColorBlock(Color.blue);
-                //transform.GetComponent<MeshRenderer>().material.color = Color.blue;
                 break;
 			case Punch.Rhook:
 				print("rhook");
                 transform.position = startPos + rightJabb;
                 transform.rotation = Quaternion.Euler(0,180-45,0);
                 ColorBlock(Color.green);
-                //transform.GetComponent<MeshRenderer>().material.color = Color.green;
                 break;
 			case Punch.Ruppercut:
 				print("ruppercut");
                 transform.position = startPos + topRight;
                 transform.rotation = Quaternion.Euler(45,180 + 0,0);
                 ColorBlock(Color.green);
-                //transform.GetComponent<MeshRenderer>().material.color = Color.green;
                 break;
 					
 		}
@@ -100,17 +103,23 @@ public class Obstacle : MonoBehaviour
 
 	public void Remove()
 	{
-        transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed);
+        transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -/*MainMenu.profile.speed*/5);
 
         if (transform.position.z < 0)
         {
-            parentCode.blocksMissed += 1;
-            //parentCode.blocksHitWrong += 1;
-            parentCode.consequtive = 0;
-            Destroy(gameObject);
+			if (parentCode)
+			{
+				parentCode.blocksMissed += 1;
+				parentCode.consequtive = 0;
+			}
+			else
+			{
+				print(secondParentCode);
+				secondParentCode.blocksMissed += 1;
+				secondParentCode.consequtive = 0;
+			}
+				Destroy(gameObject);
         }
-        //transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, MainMenu.profile.speed);
-        //obstacle.transform.position += new Vector3(0, 0, MainMenu.profile.speed * Time.fixedDeltaTime);
     }
 
 
@@ -121,18 +130,30 @@ public class Obstacle : MonoBehaviour
             HandTracker tracker = collision.transform.GetComponent<HandTracker>();
             float speed = tracker.speed;
 
-            parentCode.blocksHitCorrect += 1;
-            parentCode.consequtive += 1;
-            dead = true;
-
             accuracy = Vector3.Dot(transform.forward, (collision.transform.position - transform.position).normalized);
-            parentCode.accuracy += accuracy;
+			if (parentCode) {
+				parentCode.blocksHitCorrect += 1;
+				parentCode.consequtive += 1;
+				parentCode.accuracy += accuracy;
+			}
+			else
+			{
+				secondParentCode.blocksHitCorrect += 1;
+				secondParentCode.consequtive += 1;
+				secondParentCode.accuracy += accuracy;
+			}
+				dead = true;
+
             Destroy(gameObject);
         }
         if (collision.transform.name == "Head")
         {
-            parentCode.consequtive = 0;
-            Destroy(gameObject);
+			if(parentCode)
+				parentCode.consequtive = 0;
+
+			if (secondParentCode)
+				secondParentCode.consequtive = 0;
+			Destroy(gameObject);
         }
     }
 

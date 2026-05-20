@@ -27,13 +27,8 @@ public class Generate : MonoBehaviour
             Dictionary<string, float> data = new Dictionary<string, float>();
             data.Add("Obstacle", obstacleToAdd);
             data.Add("Time", i);
-            //data.Add(obstacleToAdd, i);
             obstacles.Add(data);
             blocksLoaded += 1;
-            //obstacles.Add(obstacleToAdd, i);
-            //print(obstacleToAdd);
-            //print(i);
-            //print("");
         }
         eyeLevel = 1.7f;
     }
@@ -65,9 +60,14 @@ public class Generate : MonoBehaviour
                 break;
 
         }
-        newObstacle.GetComponent<Obstacle>().Setup(spawnPos.position, playerPunch);
-        //Obstacle ob = newObstacle.AddComponent<Obstacle>();
-        //ob.Setup(spawnPos.position, this);
+        Obstacle ob = newObstacle.GetComponent<Obstacle>();
+        ob.SetParent(this);
+        ob.Setup(spawnPos.position, playerPunch);
+    }
+
+    void SpawnBomb()
+    {
+
     }
 
     // Update is called once per frame
@@ -90,9 +90,6 @@ public class Generate : MonoBehaviour
             obstacles.Remove(currentObstacle);
             float val;
             currentObstacle.TryGetValue("Obstacle", out val);
-            //print("spawn ");
-            //print(val);
-            //print("");
             SpawnObstabacle();
         }
     }
