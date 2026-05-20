@@ -38,7 +38,7 @@ public class Map : MonoBehaviour
     {
         
         GameObject newPunch = Instantiate(punchCube);
-        Obstacle ob = newPunch.AddComponent<Obstacle>();
+        Obstacle ob = newPunch.GetComponent<Obstacle>();
         ob.SetParent(this);
         ob.Setup(transform.position, punch[0]);
         punch.RemoveAt(0);

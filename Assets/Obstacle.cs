@@ -33,6 +33,7 @@ public class Obstacle : MonoBehaviour
 	public void SetParent(Map parent)
 	{
 		secondParentCode = parent;
+		print(gameObject);
 		print(secondParentCode);
 	}
 
@@ -114,6 +115,7 @@ public class Obstacle : MonoBehaviour
 			}
 			else
 			{
+				print(gameObject);
 				print(secondParentCode);
 				secondParentCode.blocksMissed += 1;
 				secondParentCode.consequtive = 0;
