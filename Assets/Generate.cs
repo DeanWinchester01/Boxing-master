@@ -11,6 +11,8 @@ public class Generate : MonoBehaviour
     public Transform spawnPos;
     public Transform targetPos;
 
+    public GameObject finish;
+
     public int blocksHitCorrect = 0;
     public int blocksHitWrong = 0;
     public int blocksMissed = 0;
@@ -75,10 +77,12 @@ public class Generate : MonoBehaviour
     {
         if(obstacles.Count == 0)
         {
-            print("Correct: " + blocksHitCorrect.ToString());
+            finish.SetActive(true);
+            finish.GetComponent<Finish>().Display(this);
+            /*print("Correct: " + blocksHitCorrect.ToString());
             print("Wrong: " + blocksHitWrong.ToString());
             print("Consequtive: " + consequtive.ToString());
-            print("General  Accuracy: " + ((accuracy / blocksLoaded) * 100).ToString() + "%");
+            print("General  Accuracy: " + ((accuracy / blocksLoaded) * 100).ToString() + "%");*/
             return;
         }
         Dictionary<string, float> currentObstacle = obstacles[0];

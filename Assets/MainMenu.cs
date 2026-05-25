@@ -9,12 +9,23 @@ public class MainMenu : MonoBehaviour
     public static UserProfile profile;
     public void Quit()
     {
+        Database.Save("Player", profile);
         Application.Quit();
     }
 
     private void Start()
     {
-        profile = new UserProfile();
+        string newProfile = Database.LoadUser("Player");
+        if(newProfile == null)
+        {
+            print("no data");
+            profile = new UserProfile();
+        }
+        else
+        {
+            print(newProfile);
+            profile = JsonUtility.FromJson<UserProfile>(newProfile);
+        }
     }
 
     public void Settings()

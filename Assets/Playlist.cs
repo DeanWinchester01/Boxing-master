@@ -8,8 +8,8 @@ public class Playlist : MonoBehaviour
     List<int> levels;
     public GameObject levelButton;
     public int levelsAvailable;
-    public SceneLoader loader;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject player;
+
     void AddMap()
     {
         levels = MainMenu.profile.levelsComplete;
@@ -20,7 +20,7 @@ public class Playlist : MonoBehaviour
         {
             GameObject level = Instantiate(levelButton);
 
-            level.GetComponent<Button>().onClick.AddListener(() => loader.LoadScene(i.ToString()));
+            level.GetComponent<Button>().onClick.AddListener(() => SceneLoader.LoadScene(player, i.ToString()));
             if (levels.Contains(i))
             {
                 level.GetComponent<Image>().color = Color.green;

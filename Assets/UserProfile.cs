@@ -15,8 +15,5 @@ public class UserProfile
         volume = .5f;
         hand = true;
         levelsComplete = new List<int>();
-        levelsComplete.Add(5);
-        levelsComplete.Add(15);
-        levelsComplete.Add(3);
     }
 }

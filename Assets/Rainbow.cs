@@ -9,9 +9,6 @@ public class Rainbow : MonoBehaviour
         Material mat;
         mat = GetComponent<MeshRenderer>().material;
         Color.RGBToHSV(mat.color, out h, out s, out v);
-        print(h);
-        print(s);
-        print(v);
     }
 
     // Update is called once per frame

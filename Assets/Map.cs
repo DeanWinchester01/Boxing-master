@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-[ExecuteInEditMode]
 public class Map : MonoBehaviour
 {
     public AudioClip song;
@@ -11,6 +11,8 @@ public class Map : MonoBehaviour
     public List<Obstacle.Punch> punch;
     public List<float> timeStamps;
     public GameObject punchCube;
+
+    public GameObject finished;
 
     public int blocksMissed = 0;
     public int consequtive = 0;
@@ -27,12 +29,19 @@ public class Map : MonoBehaviour
 
     IEnumerator Play()
     {
-        yield return new WaitForSeconds(0);
         isPlaying = true;
         source.clip = song;
-        //source.pitch = MainMenu.profile.speed;
         source.Play();
+        yield return new WaitForSeconds(song.length);
+        string scene = SceneManager.GetActiveScene().name;
+        int number = int.Parse(scene.Substring(scene.Length-1));
+        MainMenu.profile.levelsComplete.Add(number);
+        finished.SetActive(true);
+        finished.GetComponent<Finish>().Display(this);
+        //source.pitch = MainMenu.profile.speed;
     }
+
+
 
     void SpawnPunch()
     {
