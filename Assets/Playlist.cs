@@ -20,7 +20,6 @@ public class Playlist : MonoBehaviour
         for (int i = 1; i < levelsAvailable; i++)
         {
             GameObject level = Instantiate(levelButton);
-            level.GetComponent<LoadMap>().player = player;
 
             //level.GetComponent<Button>().onClick.AddListener(() => SceneLoader.LoadScene(player, level.name.Substring(level.name.Length-1)));
             print(level.name.Substring(level.name.Length - 1));

@@ -31,8 +31,8 @@ public class Finish : MonoBehaviour
         textContent.text += "\nTotal accuracy: " + info.blocksHitCorrect.ToString();
     }
 
-    void GoBack()
+    public void GoBack()
     {
-        SceneLoader.LoadScene(player, "MainMenu");
+        GetComponent<LoadMap>().OnClick();
     }
 }

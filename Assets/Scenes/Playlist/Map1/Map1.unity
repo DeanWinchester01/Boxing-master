@@ -830,7 +830,7 @@ MonoBehaviour:
   - 153.3029
   - 153.97571
   punchCube: {fileID: 3014894314127246256, guid: a93db41cfc08dbb4f8b1aa1477cf4a0c, type: 3}
-  finished: {fileID: 0}
+  finished: {fileID: 8013768365410936235}
   blocksMissed: 0
   consequtive: 0
   blocksHitCorrect: 0
@@ -1117,6 +1117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2506750637928855924, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6424400821607860664, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1202,6 +1206,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
+--- !u!1 &8013768365410936235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2682303430741728545, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
+  m_PrefabInstance: {fileID: 8013768365410936234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
