@@ -15,7 +15,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        string newProfile = Database.LoadUser("Player");
         if(newProfile == null)
         {
             print("no data");

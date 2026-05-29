@@ -23,7 +23,7 @@ public class Settings : MonoBehaviour
 
     private void Start()
     {
-        profile = new UserProfile();
+        
     }
     
     public void Back()

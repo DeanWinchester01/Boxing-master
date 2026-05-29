@@ -11,18 +11,14 @@ public class Database : MonoBehaviour
         PlayerPrefs.SetString(key, converted);
     }
 
-    public static string LoadUser(string key)
+
+    public static UserProfile LoadUser(string key)
     {
-        if (PlayerPrefs.HasKey(key))
-        {
-            return PlayerPrefs.GetString(key);
-        }
         else
         {
             return null;
         }
     }
-
 
     public static TimeStamp Load(string key)
     {

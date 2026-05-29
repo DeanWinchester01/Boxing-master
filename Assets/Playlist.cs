@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class Playlist : MonoBehaviour
     void AddMap()
     {
         levels = MainMenu.profile.levelsComplete;
-        float x = 1;
+        float x = 0;
         float y = 0;
 
         for (int i = 0; i < levelsAvailable; i++)
@@ -34,11 +35,13 @@ public class Playlist : MonoBehaviour
             level.name = "Map" + i.ToString();
             x+= level.GetComponent<RectTransform>().localScale.x + 0.5f;
 
-            if(x >= 11)
+            if(x >= 13)
             {
                 y+= level.GetComponent<RectTransform>().localScale.y + 0.5f;
-                x = 1;
+                x = 0;
             }
+            level.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "Level " + i.ToString();
+            //level.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshPro>().text = "Level " + i.ToString();
             //level.transform.parent = transform;
         }
     }

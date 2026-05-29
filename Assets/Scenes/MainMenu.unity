@@ -1540,7 +1540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6499517531677593257, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
@@ -5058,8 +5058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39369db1d40c4dd47bf4b54a5f96b8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  levelButton: {fileID: 1666759134686929049, guid: 10972ee500cde894c9e54fe1ffa63aa0, type: 3}
-  levelsAvailable: 49
+  levelButton: {fileID: 3700680022890327041, guid: 70f4011b37d00e241b330383d99880a3, type: 3}
+  levelsAvailable: 4
   loader: {fileID: 700951089}
 --- !u!156049354 &1604490175
 Grid:
