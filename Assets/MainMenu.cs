@@ -15,15 +15,17 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        if(newProfile == null)
+        if (profile == null)
         {
-            print("no data");
-            profile = new UserProfile();
-        }
-        else
-        {
-            print(newProfile);
-            profile = JsonUtility.FromJson<UserProfile>(newProfile);
+            if (PlayerPrefs.HasKey("Player"))
+            {
+                profile = Database.LoadUser("Player");
+            }
+            else
+            {
+                print("created new");
+                profile = new UserProfile();
+            }
         }
     }
 

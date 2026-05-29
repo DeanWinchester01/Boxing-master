@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[ExecuteAlways]
+
 public class Database : MonoBehaviour
 {
     public static void Save(string key, object value)
@@ -14,10 +14,8 @@ public class Database : MonoBehaviour
 
     public static UserProfile LoadUser(string key)
     {
-        else
-        {
-            return null;
-        }
+        string loaded = PlayerPrefs.GetString(key);
+        return JsonUtility.FromJson<UserProfile>(loaded);
     }
 
     public static TimeStamp Load(string key)
