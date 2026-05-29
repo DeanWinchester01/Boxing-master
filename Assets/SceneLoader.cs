@@ -10,7 +10,8 @@ public class SceneLoader : MonoBehaviour
 
     public static void LoadScene(GameObject player, string scene)
     {
-        string sceneAddress = "Scenes/PlayList/Map" + scene+"Map";
+        string sceneAddress = "Scenes/Playlist/Map" + scene+"/Map"+scene;
+        print(sceneAddress);
         SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(sceneAddress));
         SceneManager.LoadScene(sceneAddress);
         

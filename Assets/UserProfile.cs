@@ -10,8 +10,8 @@ public class UserProfile
 
     public UserProfile()
     {
-        speed = 1;
-        random = 1;
+        speed = 5;
+        random = 4;
         volume = .5f;
         hand = true;
         levelsComplete = new List<int>();

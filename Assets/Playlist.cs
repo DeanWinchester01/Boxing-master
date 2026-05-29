@@ -17,11 +17,13 @@ public class Playlist : MonoBehaviour
         float x = 0;
         float y = 0;
 
-        for (int i = 0; i < levelsAvailable; i++)
+        for (int i = 1; i < levelsAvailable; i++)
         {
             GameObject level = Instantiate(levelButton);
+            level.GetComponent<LoadMap>().player = player;
 
-            level.GetComponent<Button>().onClick.AddListener(() => SceneLoader.LoadScene(player, i.ToString()));
+            //level.GetComponent<Button>().onClick.AddListener(() => SceneLoader.LoadScene(player, level.name.Substring(level.name.Length-1)));
+            print(level.name.Substring(level.name.Length - 1));
             if (levels.Contains(i))
             {
                 level.GetComponent<Image>().color = Color.green;

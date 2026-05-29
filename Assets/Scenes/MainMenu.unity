@@ -2613,6 +2613,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730561751}
   m_CullTransparentMesh: 1
+--- !u!1 &731373259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &747245129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,7 +5065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   levelButton: {fileID: 3700680022890327041, guid: 70f4011b37d00e241b330383d99880a3, type: 3}
   levelsAvailable: 4
-  loader: {fileID: 700951089}
+  player: {fileID: 731373259}
 --- !u!156049354 &1604490175
 Grid:
   m_ObjectHideFlags: 0
@@ -5560,6 +5565,7 @@ GameObject:
   - component: {fileID: 1830318747}
   - component: {fileID: 1830318745}
   - component: {fileID: 1830318748}
+  - component: {fileID: 1830318749}
   m_Layer: 5
   m_Name: Generated
   m_TagString: Untagged
@@ -5632,10 +5638,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 700951089}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 1830318749}
+        m_TargetAssemblyTypeName: LoadMap, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5673,6 +5679,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.9481754, y: 2.3932238, z: 0.7627096}
   m_Center: {x: 2.4881868, y: -1.2515206, z: 0.11864519}
+--- !u!114 &1830318749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830318743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b890e7460fdbc4696272e793c77950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadMap
+  map: Scenes/GeneratedScene
+  player: {fileID: 731373259}
 --- !u!1 &1915226452
 GameObject:
   m_ObjectHideFlags: 0
