@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1702564885406493807}
   - component: {fileID: 7827374389556176025}
   - component: {fileID: 3423659036654817290}
+  - component: {fileID: 5265657318742561308}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -121,6 +122,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &5265657318742561308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700680022890327041}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7808838, y: 0.69381714, z: 0.15694344}
+  m_Center: {x: -0.024597168, y: -0.031936646, z: 0.0043756664}
 --- !u!1 &5210114306913924711
 GameObject:
   m_ObjectHideFlags: 0
