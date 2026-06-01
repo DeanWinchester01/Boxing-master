@@ -22,7 +22,7 @@ public class HandTracker : MonoBehaviour
             print(value.isPressed);
             RaycastHit buttonHit;
             Debug.DrawRay(transform.position, transform.up);
-            Vector3 direction = (transform.up + transform.forward).normalized;
+            Vector3 direction = (transform.up).normalized;
             if(Physics.Raycast(transform.position, direction, out buttonHit, float.MaxValue, raycastlayer))
             {
                 print("hit object");
@@ -41,7 +41,7 @@ public class HandTracker : MonoBehaviour
     {
         RaycastHit buttonHit;
         //Debug.DrawRay(transform.position, transform.up);
-        Vector3 direction = (transform.up + transform.forward).normalized;
+        Vector3 direction = (transform.up).normalized;
         if (Physics.Raycast(transform.position, direction, out buttonHit, float.MaxValue, raycastlayer))
         {
             Vector3 endPoint = buttonHit.point;

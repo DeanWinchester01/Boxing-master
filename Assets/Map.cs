@@ -13,6 +13,9 @@ public class Map : MonoBehaviour
     public GameObject punchCube;
 
     public GameObject finished;
+    public GameObject laser;
+
+    public GameObject leftHand, rightHand;
 
     public int blocksMissed = 0;
     public int consequtive = 0;
@@ -32,15 +35,33 @@ public class Map : MonoBehaviour
         isPlaying = true;
         source.clip = song;
         source.Play();
+        laser.SetActive(false);
         yield return new WaitForSeconds(song.length);
         string scene = SceneManager.GetActiveScene().name;
         int number = int.Parse(scene.Substring(scene.Length-1));
         MainMenu.profile.levelsComplete.Add(number);
         finished.SetActive(true);
         finished.GetComponent<Finish>().Display(this);
+        laser.SetActive(true);
         //source.pitch = MainMenu.profile.speed;
+        SetHands();
     }
 
+    void SetHands()
+    {
+        //left blue
+        //right green
+        if (MainMenu.profile.hand)//right handed
+        {
+            leftHand.GetComponent<MeshRenderer>().material.color = Color.blue;
+            rightHand.GetComponent<MeshRenderer>().material.color = Color.green;
+        }
+        else
+        {
+            leftHand.GetComponent<MeshRenderer>().material.color = Color.green;
+            rightHand.GetComponent<MeshRenderer>().material.color = Color.blue;
+        }
+    }
 
 
     void SpawnPunch()

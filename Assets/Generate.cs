@@ -12,6 +12,7 @@ public class Generate : MonoBehaviour
     public Transform targetPos;
 
     public GameObject finish;
+    public GameObject leftHand, rightHand;
 
     public int blocksHitCorrect = 0;
     public int blocksHitWrong = 0;
@@ -23,7 +24,7 @@ public class Generate : MonoBehaviour
     private void Start()
     {
         int minutesInSeconds = 60 * 3;
-        for(float i = 0; i < minutesInSeconds; i+= UnityEngine.Random.Range(1,5))
+        for(float i = 0; i < minutesInSeconds; i+= UnityEngine.Random.Range(1,2.5f))
         {
             int obstacleToAdd = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Obstacle.Punch)).Length);
             Dictionary<string, float> data = new Dictionary<string, float>();
@@ -33,6 +34,23 @@ public class Generate : MonoBehaviour
             blocksLoaded += 1;
         }
         eyeLevel = 1.7f;
+        SetHands();
+    }
+
+    void SetHands()
+    {
+        //left blue
+        //right green
+        if (MainMenu.profile.hand)//right handed
+        {
+            leftHand.GetComponent<MeshRenderer>().material.color = Color.blue;
+            rightHand.GetComponent<MeshRenderer>().material.color = Color.green;
+        }
+        else
+        {
+            leftHand.GetComponent<MeshRenderer>().material.color = Color.green;
+            rightHand.GetComponent<MeshRenderer>().material.color = Color.blue;
+        }
     }
 
     void SpawnObstabacle()
@@ -79,10 +97,6 @@ public class Generate : MonoBehaviour
         {
             finish.SetActive(true);
             finish.GetComponent<Finish>().Display(this);
-            /*print("Correct: " + blocksHitCorrect.ToString());
-            print("Wrong: " + blocksHitWrong.ToString());
-            print("Consequtive: " + consequtive.ToString());
-            print("General  Accuracy: " + ((accuracy / blocksLoaded) * 100).ToString() + "%");*/
             return;
         }
         Dictionary<string, float> currentObstacle = obstacles[0];

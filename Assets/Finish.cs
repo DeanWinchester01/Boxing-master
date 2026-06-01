@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
-    TextMeshPro textContent;
-    Button backButton;
+    public TextMeshProUGUI textContent;
+    public Button backButton;
     public GameObject player;
     private void Start()
     {
-        backButton = transform.Find("Button").GetComponent<Button>();
-        textContent = transform.Find("Information").GetComponent<TextMeshPro>();
+        //backButton = transform.Find("Button").GetComponent<Button>();
+        //textContent = transform.Find("Information").GetComponent<TextMeshPro>();
         transform.parent.GetComponent<Canvas>().worldCamera = Camera.current;
 
         backButton.onClick.AddListener(GoBack);

@@ -42,7 +42,7 @@ public class Obstacle : MonoBehaviour
         switch (type)
 		{
 			case Punch.Jabb:
-				if (/*MainMenu.profile.hand*/true) // force right hand for now
+				if (MainMenu.profile.hand) // force right hand for now
 				{
 					//right hand as main
 					ColorBlock(Color.blue);
@@ -56,7 +56,7 @@ public class Obstacle : MonoBehaviour
 				}
 					break;
 			case Punch.Cross:
-				if (/*MainMenu.profile.hand*/true) //force right hand for now
+				if (MainMenu.profile.hand) //force right hand for now
 				{
 					transform.position = startPos + rightSmash;
 					ColorBlock(Color.green);
@@ -93,7 +93,7 @@ public class Obstacle : MonoBehaviour
 
 	public void Remove()
 	{
-        transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -/*MainMenu.profile.speed*/5);
+        transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed*5);
 
         if (transform.position.z < 0)
         {
