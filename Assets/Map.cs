@@ -1,9 +1,11 @@
+using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[ExecuteInEditMode]
 public class Map : MonoBehaviour
 {
     public AudioClip song;
@@ -27,7 +29,7 @@ public class Map : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Play());
+        //StartCoroutine(Play());
     }
 
     IEnumerator Play()
@@ -85,8 +87,8 @@ public class Map : MonoBehaviour
 
         if (playTime > timeStamps[0])
         {
-            timeStamps.RemoveAt(0);
-            SpawnPunch();  
+            //timeStamps.RemoveAt(0);
+            //SpawnPunch();  
         }
     }
 
@@ -94,20 +96,23 @@ public class Map : MonoBehaviour
     void LoadPunches()
     {
         TimeStamp stamp = Database.Load("TimeStamps");
+        
+
         for (int i = 0; i < stamp.stamp.Count; i++)
         {
-            int obstacleToAdd = UnityEngine.Random.Range(0, Enum.GetNames(typeof(Obstacle.Punch)).Length);
-            if (obstacleToAdd == 0)
-                punch.Add(Obstacle.Punch.Jabb);
+            timeStamps.Add(stamp.stamp[i]);
+            int obstacleToAdd = UnityEngine.Random.Range(1, Enum.GetNames(typeof(Obstacle.Punch)).Length);
             if (obstacleToAdd == 1)
-                punch.Add(Obstacle.Punch.Cross);
+                punch.Add(Obstacle.Punch.Jabb);
             if (obstacleToAdd == 2)
-                punch.Add(Obstacle.Punch.Lhook);
+                punch.Add(Obstacle.Punch.Cross);
             if (obstacleToAdd == 3)
-                punch.Add(Obstacle.Punch.Rhook);
+                punch.Add(Obstacle.Punch.Lhook);
             if (obstacleToAdd == 4)
-                punch.Add(Obstacle.Punch.Luppercut);
+                punch.Add(Obstacle.Punch.Rhook);
             if (obstacleToAdd == 5)
+                punch.Add(Obstacle.Punch.Luppercut);
+            if (obstacleToAdd == 6)
                 punch.Add(Obstacle.Punch.Ruppercut);
         }
     }

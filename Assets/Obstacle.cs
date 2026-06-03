@@ -10,6 +10,8 @@ public class Obstacle : MonoBehaviour
 	float accuracy;
 	public Generate? parentCode;
 	public Map? secondParentCode;
+	Rigidbody body;
+
 	[Space(10)]
 	public Vector3 leftJabb;
 	public Vector3 rightJabb;
@@ -36,6 +38,7 @@ public class Obstacle : MonoBehaviour
 
 	public void Setup(Vector3 startPos, Punch type)
 	{
+		body = transform.GetComponent<Rigidbody>();
 		transform.position = startPos;
 		//body.rotation
 
@@ -93,7 +96,7 @@ public class Obstacle : MonoBehaviour
 
 	public void Remove()
 	{
-        transform.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed*5);
+        body.linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed*5);
 
         if (transform.position.z < 0)
         {
