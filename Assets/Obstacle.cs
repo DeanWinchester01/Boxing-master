@@ -96,7 +96,7 @@ public class Obstacle : MonoBehaviour
 
 	public void Remove()
 	{
-        body.linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed*5);
+        body.linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed);
 
         if (transform.position.z < 0)
         {

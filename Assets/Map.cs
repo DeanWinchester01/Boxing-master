@@ -36,6 +36,7 @@ public class Map : MonoBehaviour
     {
         isPlaying = true;
         source.clip = song;
+        source.pitch = MainMenu.profile.speed / 5;
         source.Play();
         laser.SetActive(false);
         yield return new WaitForSeconds(song.length);
@@ -83,7 +84,7 @@ public class Map : MonoBehaviour
         //print(Application.isEditor);
         //if (Application.isEditor) return;
         if (isPlaying)
-            playTime += Time.deltaTime;
+            playTime += Time.deltaTime * MainMenu.profile.speed/5;
 
         if (playTime > timeStamps[0])
         {
