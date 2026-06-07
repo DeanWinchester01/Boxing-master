@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Obstacle;
 
 public class Generate : MonoBehaviour
@@ -12,6 +13,7 @@ public class Generate : MonoBehaviour
     public Transform targetPos;
 
     public GameObject finish;
+    public GameObject pauseScreen;
     public GameObject leftHand, rightHand;
 
     public int blocksHitCorrect = 0;
@@ -85,9 +87,19 @@ public class Generate : MonoBehaviour
         ob.Setup(spawnPos.position, playerPunch);
     }
 
-    void SpawnBomb()
+    public void OnSelect()
     {
+        pauseScreen.SetActive(true);
+    }
 
+    public void OnUnPause()
+    {
+        pauseScreen.SetActive(false);
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene("Scenes/GeneratedScene.unity");
     }
 
     // Update is called once per frame

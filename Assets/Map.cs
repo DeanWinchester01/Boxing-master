@@ -15,6 +15,7 @@ public class Map : MonoBehaviour
     public GameObject punchCube;
 
     public GameObject finished;
+    public GameObject pauseScreen;
     public GameObject laser;
 
     public GameObject leftHand, rightHand;
@@ -26,6 +27,7 @@ public class Map : MonoBehaviour
 
     float playTime = 0;
     bool isPlaying = true;
+    float countdown;
 
     void Start()
     {
@@ -39,7 +41,12 @@ public class Map : MonoBehaviour
         source.pitch = MainMenu.profile.speed / 5;
         source.Play();
         laser.SetActive(false);
-        yield return new WaitForSeconds(song.length);
+        countdown = song.length;
+        while (countdown > 0)
+        {
+            yield return null;
+        }
+        //yield return new WaitForSeconds(song.length);
         string scene = SceneManager.GetActiveScene().name;
         int number = int.Parse(scene.Substring(scene.Length-1));
         MainMenu.profile.levelsComplete.Add(number);
@@ -48,6 +55,16 @@ public class Map : MonoBehaviour
         laser.SetActive(true);
         //source.pitch = MainMenu.profile.speed;
         SetHands();
+    }
+
+    void OnPause()
+    {
+        pauseScreen.SetActive(true);
+    }
+
+    void OnUnPause()
+    {
+        pauseScreen.SetActive(false);
     }
 
     void SetHands()
@@ -83,8 +100,10 @@ public class Map : MonoBehaviour
     {
         //print(Application.isEditor);
         //if (Application.isEditor) return;
-        if (isPlaying)
+        if (isPlaying && !pauseScreen.activeSelf)
             playTime += Time.deltaTime * MainMenu.profile.speed/5;
+
+
 
         if (playTime > timeStamps[0])
         {
