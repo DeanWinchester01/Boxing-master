@@ -13,7 +13,6 @@ public class Generate : MonoBehaviour
     public Transform targetPos;
 
     public GameObject finish;
-    public GameObject pauseScreen;
     public GameObject leftHand, rightHand;
 
     public int blocksHitCorrect = 0;
@@ -85,16 +84,6 @@ public class Generate : MonoBehaviour
         Obstacle ob = newObstacle.GetComponent<Obstacle>();
         ob.SetParent(this);
         ob.Setup(spawnPos.position, playerPunch);
-    }
-
-    public void OnSelect()
-    {
-        pauseScreen.SetActive(true);
-    }
-
-    public void OnUnPause()
-    {
-        pauseScreen.SetActive(false);
     }
 
     public void ResetGame()

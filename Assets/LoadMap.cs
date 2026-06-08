@@ -6,8 +6,9 @@ public class LoadMap : MonoBehaviour
 {
     public string map;
 
-    public void OnClick()
+    public void OnLoad()
     {
+        Debug.LogError("path");
         if (map != "")
         {
             Scene scene = SceneManager.GetSceneByPath(map+".unity");

@@ -33,6 +33,6 @@ public class Finish : MonoBehaviour
 
     public void GoBack()
     {
-        GetComponent<LoadMap>().OnClick();
+        GetComponent<LoadMap>().OnLoad();
     }
 }
