@@ -39,7 +39,7 @@ public class Record : MonoBehaviour
 
         yield return new WaitForSeconds(clip.length);
 
-        Database.Save("TimeStamps", stamp);
+        Database.Save(clip.name, stamp);
         /*
         string save = t.ToString();
         print(save);
