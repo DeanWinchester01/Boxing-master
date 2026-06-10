@@ -103,7 +103,7 @@ public class Map : MonoBehaviour
     //Load punches in from system storage, only use during development
     void LoadPunches()
     {
-        TimeStamp stamp = Database.Load("TimeStamps");
+        TimeStamp stamp = Database.Load(source.name);
         
 
         for (int i = 0; i < stamp.stamp.Count; i++)
