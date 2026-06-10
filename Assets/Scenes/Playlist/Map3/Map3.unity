@@ -568,6 +568,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
+--- !u!1 &673292437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2506750637928855924, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
+  m_PrefabInstance: {fileID: 673292436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1086109420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,6 +635,21 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 1767192439, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   m_PrefabInstance: {fileID: 1086109420}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1086109422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4835799619209728688, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1086109420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1086109423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8122279108311043893, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1086109420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1086109424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6301829723199011749, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1086109420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238438429
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +677,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238438429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdf6ff9508ae72f4e80b64e67ca22b79, type: 3}
   m_Name: 
@@ -951,11 +971,10 @@ MonoBehaviour:
   - 153.3029
   - 153.97571
   punchCube: {fileID: 3014894314127246256, guid: a93db41cfc08dbb4f8b1aa1477cf4a0c, type: 3}
-  finished: {fileID: 0}
-  pauseScreen: {fileID: 0}
-  laser: {fileID: 0}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  finished: {fileID: 673292437}
+  laser: {fileID: 1086109422}
+  leftHand: {fileID: 1086109424}
+  rightHand: {fileID: 1086109423}
   blocksMissed: 0
   consequtive: 0
   blocksHitCorrect: 0
@@ -996,7 +1015,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238438429}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -1113,7 +1132,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: ComputerMap
+  m_DefaultActionMap: 461bce25-7762-40c5-b639-f190649be6d6
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1001 &1456443322

@@ -1,11 +1,10 @@
-using Mono.Cecil;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[ExecuteInEditMode]
 public class Map : MonoBehaviour
 {
     public AudioClip song;
@@ -15,7 +14,6 @@ public class Map : MonoBehaviour
     public GameObject punchCube;
 
     public GameObject finished;
-    public GameObject pauseScreen;
     public GameObject laser;
 
     public GameObject leftHand, rightHand;
@@ -31,7 +29,7 @@ public class Map : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(Play());
+        StartCoroutine(Play());
     }
 
     IEnumerator Play()
@@ -53,18 +51,8 @@ public class Map : MonoBehaviour
         finished.SetActive(true);
         finished.GetComponent<Finish>().Display(this);
         laser.SetActive(true);
-        //source.pitch = MainMenu.profile.speed;
+        source.pitch = MainMenu.profile.speed;
         SetHands();
-    }
-
-    void OnPause()
-    {
-        pauseScreen.SetActive(true);
-    }
-
-    void OnUnPause()
-    {
-        pauseScreen.SetActive(false);
     }
 
     void SetHands()
@@ -100,15 +88,15 @@ public class Map : MonoBehaviour
     {
         //print(Application.isEditor);
         //if (Application.isEditor) return;
-        if (isPlaying && !pauseScreen.activeSelf)
+        if (isPlaying)
             playTime += Time.deltaTime * MainMenu.profile.speed/5;
 
 
 
         if (playTime > timeStamps[0])
         {
-            //timeStamps.RemoveAt(0);
-            //SpawnPunch();  
+            timeStamps.RemoveAt(0);
+            SpawnPunch();  
         }
     }
 
@@ -138,6 +126,6 @@ public class Map : MonoBehaviour
     }
     private void OnEnable()
     {
-        LoadPunches();
+        //LoadPunches();
     }
 }

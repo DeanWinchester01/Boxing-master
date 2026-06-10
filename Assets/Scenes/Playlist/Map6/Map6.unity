@@ -1816,7 +1816,6 @@ MonoBehaviour:
   - 140.1347
   punchCube: {fileID: 3014894314127246256, guid: a93db41cfc08dbb4f8b1aa1477cf4a0c, type: 3}
   finished: {fileID: 323211284}
-  pauseScreen: {fileID: 0}
   laser: {fileID: 1360598425}
   leftHand: {fileID: 1360598427}
   rightHand: {fileID: 1360598426}
@@ -1977,7 +1976,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: ComputerMap
+  m_DefaultActionMap: 461bce25-7762-40c5-b639-f190649be6d6
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1001 &1360598423
