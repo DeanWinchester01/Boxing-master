@@ -4908,7 +4908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   levelButton: {fileID: 3700680022890327041, guid: 70f4011b37d00e241b330383d99880a3, type: 3}
-  levelsAvailable: 4
+  levelsAvailable: 10
   player: {fileID: 731373259}
 --- !u!156049354 &1604490175
 Grid:
@@ -5484,7 +5484,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1830318749}
         m_TargetAssemblyTypeName: LoadMap, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: OnLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
