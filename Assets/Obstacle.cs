@@ -98,7 +98,7 @@ public class Obstacle : MonoBehaviour
 	{
         body.linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed);
 
-        if (transform.position.z < 0)
+        if (transform.position.z < GameObject.FindGameObjectWithTag("Player").transform.position.z-5)
         {
 			if (parentCode)
 			{
