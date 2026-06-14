@@ -154,11 +154,11 @@ MonoBehaviour:
   dead: 0
   parentCode: {fileID: 0}
   secondParentCode: {fileID: 0}
-  leftJabb: {x: 0, y: 0, z: 0}
-  rightJabb: {x: 0, y: 0, z: 0}
-  topLeft: {x: 0, y: 0, z: 0}
-  topRight: {x: 0, y: 0, z: 0}
-  bottomLeft: {x: 0, y: 0, z: 0}
-  bottomRight: {x: 0, y: 0, z: 0}
-  leftSmash: {x: 0, y: 0, z: 0}
-  rightSmash: {x: 0, y: 0, z: 0}
+  leftJabb: {x: -1, y: 1, z: 0}
+  rightJabb: {x: 1, y: 1, z: 0}
+  topLeft: {x: 0, y: 2, z: 0}
+  topRight: {x: 1, y: 2, z: 0}
+  bottomLeft: {x: -1, y: 0, z: 0}
+  bottomRight: {x: 1, y: 0, z: 0}
+  leftSmash: {x: -0.5, y: 1, z: 0}
+  rightSmash: {x: 0.5, y: 1, z: 0}
