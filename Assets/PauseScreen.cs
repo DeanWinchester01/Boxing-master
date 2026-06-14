@@ -6,6 +6,7 @@ public class PauseScreen : MonoBehaviour
 {
     Transform panel;
     Button back, play, reset;
+    public AudioSource music;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class PauseScreen : MonoBehaviour
     void OnOpen()
     {
         panel.gameObject.SetActive(true);
+        music.Pause();
         Time.timeScale = 0;
     }
 
@@ -31,6 +33,7 @@ public class PauseScreen : MonoBehaviour
 
     public void Play()
     {
+        music.UnPause();
         Time.timeScale = 1;
         panel.gameObject.SetActive(false);
     }

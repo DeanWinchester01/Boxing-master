@@ -10,14 +10,15 @@ public class Playlist : MonoBehaviour
     public GameObject levelButton;
     public int levelsAvailable;
     public GameObject player;
+    public GameObject menu;
 
     void AddMap()
     {
         levels = MainMenu.profile.levelsComplete;
         float x = 0;
-        float y = 0;
+        float y = 1;
 
-        for (int i = 1; i < levelsAvailable; i++)
+        for (int i = 1; i <= levelsAvailable; i++)
         {
             GameObject level = Instantiate(levelButton);
 
@@ -47,10 +48,16 @@ public class Playlist : MonoBehaviour
         }
     }
 
+    void Back()
+    {
+        menu.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
     void Start()
     {
         AddMap();
-        
+        transform.Find("Back").GetComponent<Button>().onClick.AddListener(Back);
     }
 
     // Update is called once per frame
