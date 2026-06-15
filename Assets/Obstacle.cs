@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
 {
 	public bool dead;
 	float accuracy;
+	float life = 0;
 	public Generate? parentCode;
 	public Map? secondParentCode;
 	Rigidbody body;
@@ -150,6 +151,7 @@ public class Obstacle : MonoBehaviour
     }
 
 	private void FixedUpdate() => Remove();
+
     private void OnCollisionEnter(Collision collision) => Hit(collision);
 
 	public enum Punch

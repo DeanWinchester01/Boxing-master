@@ -23,7 +23,7 @@ public class Playlist : MonoBehaviour
             GameObject level = Instantiate(levelButton);
 
             //level.GetComponent<Button>().onClick.AddListener(() => SceneLoader.LoadScene(player, level.name.Substring(level.name.Length-1)));
-            print(level.name.Substring(level.name.Length - 1));
+            //print(level.name.Substring(level.name.Length - 1));
             if (levels.Contains(i))
             {
                 level.GetComponent<Image>().color = Color.green;

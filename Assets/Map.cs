@@ -16,6 +16,8 @@ public class Map : MonoBehaviour
     public GameObject finished;
     public GameObject laser;
 
+    public Transform spawn;
+    public Transform playerSpawn;
     public GameObject leftHand, rightHand;
 
     public int blocksMissed = 0;
@@ -40,8 +42,9 @@ public class Map : MonoBehaviour
         source.Play();
         laser.SetActive(false);
         countdown = song.length;
-        while (countdown > 0)
+        while (playTime < countdown)
         {
+            print(((int)playTime).ToString()+"/"+((int)countdown).ToString());
             yield return null;
         }
         //yield return new WaitForSeconds(song.length);
@@ -78,7 +81,7 @@ public class Map : MonoBehaviour
         GameObject newPunch = Instantiate(punchCube);
         Obstacle ob = newPunch.GetComponent<Obstacle>();
         ob.SetParent(this);
-        ob.Setup(transform.position, punch[0]);
+        ob.Setup(spawn.position, punch[0]);
         punch.RemoveAt(0);
         print(ob.secondParentCode);
     }
@@ -92,40 +95,17 @@ public class Map : MonoBehaviour
             playTime += Time.deltaTime * MainMenu.profile.speed/5;
 
 
-
-        if (playTime > timeStamps[0])
+        if (timeStamps.Count == 0) return;
+        //print(playTime.ToString() + "\t\t" + timeStamps[0]);
+        //print(((int)playTime).ToString() + "\t\t" + (timeStamps[0] - (transform.position.z - 5) / MainMenu.profile.speed).ToString());
+        print(timeStamps[0]);
+        print((spawn.position.z - playerSpawn.position.z) / MainMenu.profile.speed);
+        if (playTime > (timeStamps[0] - (spawn.position.z - playerSpawn.position.z)/MainMenu.profile.speed))
         {
             timeStamps.RemoveAt(0);
             SpawnPunch();  
         }
     }
 
-    //Load punches in from system storage, only use during development
-    void LoadPunches()
-    {
-        TimeStamp stamp = Database.Load(source.name);
-        
-
-        for (int i = 0; i < stamp.stamp.Count; i++)
-        {
-            timeStamps.Add(stamp.stamp[i]);
-            int obstacleToAdd = UnityEngine.Random.Range(1, Enum.GetNames(typeof(Obstacle.Punch)).Length);
-            if (obstacleToAdd == 1)
-                punch.Add(Obstacle.Punch.Jabb);
-            if (obstacleToAdd == 2)
-                punch.Add(Obstacle.Punch.Cross);
-            if (obstacleToAdd == 3)
-                punch.Add(Obstacle.Punch.Lhook);
-            if (obstacleToAdd == 4)
-                punch.Add(Obstacle.Punch.Rhook);
-            if (obstacleToAdd == 5)
-                punch.Add(Obstacle.Punch.Luppercut);
-            if (obstacleToAdd == 6)
-                punch.Add(Obstacle.Punch.Ruppercut);
-        }
-    }
-    private void OnEnable()
-    {
-        //LoadPunches();
-    }
+    
 }

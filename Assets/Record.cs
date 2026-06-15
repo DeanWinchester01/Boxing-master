@@ -4,35 +4,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Record : MonoBehaviour
 {
     public AudioSource source;
     public AudioClip clip;
-    bool record = false;
+    public bool record = false;
     //public int timeStamp;
     //public Dictionary<int, float> stamps = new Dictionary<int, float>();
     //public List<float> timeStamps = new List<float>();
     float time;
 
     TimeStamp stamp;
+    public Map map;
+    public bool play;
 
     void Start()
     {
         stamp = new TimeStamp();
+        map = GetComponent<Map>();
+        if (!play) return;
         StartCoroutine(Play());
+    }
+
+    //Load punches in from system storage, only use during development
+    void LoadPunches()
+    {
+        TimeStamp stamp = Database.Load(clip.name);
+
+        if (map.timeStamps.Count != 0) return; 
+        for (int i = 0; i < stamp.stamp.Count; i++)
+        {
+            map.timeStamps.Add(stamp.stamp[i]);
+            int obstacleToAdd = UnityEngine.Random.Range(1, Enum.GetNames(typeof(Obstacle.Punch)).Length);
+            if (obstacleToAdd == 1)
+                map.punch.Add(Obstacle.Punch.Jabb);
+            if (obstacleToAdd == 2)
+                map.punch.Add(Obstacle.Punch.Cross);
+            if (obstacleToAdd == 3)
+                map.punch.Add(Obstacle.Punch.Lhook);
+            if (obstacleToAdd == 4)
+                map.punch.Add(Obstacle.Punch.Rhook);
+            if (obstacleToAdd == 5)
+                map.punch.Add(Obstacle.Punch.Luppercut);
+            if (obstacleToAdd == 6)
+                map.punch.Add(Obstacle.Punch.Ruppercut);
+        }
     }
 
     private void OnEnable()
     {
-        TimeStamp loaded = Database.Load("TimeStamps");
-        stamp = loaded;
-
-        print(loaded);
+        //TimeStamp loaded = Database.Load(clip.name);
+        //stamp = loaded;
+        LoadPunches();
+        //print(loaded);
     }
 
     IEnumerator Play()
     {
-        yield return new WaitForSeconds(3);
+        
+        for (float i = 3; i > 0; i-= 0.1f)
+        {
+
+            yield return new WaitForSeconds(0.1f);
+            print(i);
+        }
+        //yield return new WaitForSeconds(3);
         source.clip = clip;
         source.Play();
         record = true;
@@ -75,7 +112,6 @@ public class Record : MonoBehaviour
         StartCoroutine(Play());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (record)

@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.08999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0283eb7b27c79a7408d129e43f7b6be1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -154,11 +154,11 @@ MonoBehaviour:
   dead: 0
   parentCode: {fileID: 0}
   secondParentCode: {fileID: 0}
-  leftJabb: {x: -1, y: 1, z: 0}
-  rightJabb: {x: 1, y: 1, z: 0}
-  topLeft: {x: 0, y: 2, z: 0}
-  topRight: {x: 1, y: 2, z: 0}
-  bottomLeft: {x: -1, y: 0, z: 0}
-  bottomRight: {x: 1, y: 0, z: 0}
-  leftSmash: {x: -0.5, y: 1, z: 0}
-  rightSmash: {x: 0.5, y: 1, z: 0}
+  leftJabb: {x: -0.5, y: 0, z: 0}
+  rightJabb: {x: 0.5, y: 0, z: 0}
+  topLeft: {x: -0.5, y: 1, z: 0}
+  topRight: {x: 0.5, y: 1, z: 0}
+  bottomLeft: {x: -0.5, y: -1, z: 0}
+  bottomRight: {x: 0.5, y: -1, z: 0}
+  leftSmash: {x: -0.5, y: 0, z: 0}
+  rightSmash: {x: 0.5, y: 0, z: 0}

@@ -3,23 +3,15 @@ using UnityEngine;
 
 public class PlayerSpawn : MonoBehaviour
 {
-    public Canvas finalScreen;
     void Start()
     {
-        StartCoroutine(Spawn());
+        Spawn();
     }
 
-    IEnumerator Spawn()
+    void Spawn()
     {
-        while(GameObject.Find("XR Origin (XR Rig)") == null)
-        {
-            yield return null;
-        }
-
-        GameObject player = GameObject.Find("XR Origin (XR Rig)");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = transform.position;
         player.transform.rotation = Quaternion.identity;
-
-        finalScreen.worldCamera = Camera.main;
     }
 }

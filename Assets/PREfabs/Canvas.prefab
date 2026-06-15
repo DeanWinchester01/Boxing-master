@@ -257,13 +257,14 @@ GameObject:
   - component: {fileID: 9037863542522920600}
   - component: {fileID: 1839305504047162944}
   - component: {fileID: 8671953745912359569}
+  - component: {fileID: 2436013619718053675}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &380554705704388804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -338,6 +339,19 @@ MonoBehaviour:
   textContent: {fileID: 687731268369445636}
   backButton: {fileID: 6480638524227570052}
   player: {fileID: 0}
+--- !u!114 &2436013619718053675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2682303430741728545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b890e7460fdbc4696272e793c77950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadMap
+  map: Scenes/MainMenu
 --- !u!1 &3798491466381986598
 GameObject:
   m_ObjectHideFlags: 0

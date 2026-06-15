@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 39130693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 1.55, z: 5}
+  m_LocalPosition: {x: 0, y: 1.55, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2506750637928855924, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5208108550270999640, guid: cf7375712554c0341a50ad5a7bdbb226, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -872,6 +872,8 @@ MonoBehaviour:
   punchCube: {fileID: 3014894314127246256, guid: a93db41cfc08dbb4f8b1aa1477cf4a0c, type: 3}
   finished: {fileID: 323211284}
   laser: {fileID: 1360598425}
+  spawn: {fileID: 1538500691}
+  playerSpawn: {fileID: 39130694}
   leftHand: {fileID: 1360598427}
   rightHand: {fileID: 1360598426}
   blocksMissed: 0
@@ -907,6 +909,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   source: {fileID: 1238438433}
   clip: {fileID: 8300000, guid: 9149d1e41ad956347aba44cde57f0ad1, type: 3}
+  record: 0
+  map: {fileID: 0}
+  play: 0
 --- !u!82 &1238438433
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1145,7 +1150,7 @@ Transform:
   m_GameObject: {fileID: 1538500690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: 1.29, z: 33.2}
+  m_LocalPosition: {x: 0, y: 1.29, z: 33.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
