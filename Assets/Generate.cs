@@ -6,7 +6,6 @@ using static Obstacle;
 
 public class Generate : MonoBehaviour
 {
-    int blocksLoaded;
     List<Dictionary<string, float>> obstacles = new List<Dictionary<string, float>>();
     public List<GameObject> obstaclePrefab = new List<GameObject>();
     public Transform spawnPos;
@@ -32,9 +31,8 @@ public class Generate : MonoBehaviour
             data.Add("Obstacle", obstacleToAdd);
             data.Add("Time", i);
             obstacles.Add(data);
-            blocksLoaded += 1;
         }
-        eyeLevel = 1.7f;
+        eyeLevel = Camera.main.transform.position.y;
         SetHands();
     }
 

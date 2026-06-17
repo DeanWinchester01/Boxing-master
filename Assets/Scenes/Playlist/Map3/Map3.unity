@@ -868,6 +868,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 85085682709085778, guid: 9df6f01c671ed4046893074768f127f8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803197086124147302, guid: 9df6f01c671ed4046893074768f127f8, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1238438433}
     - target: {fileID: 2022705904860826697, guid: 9df6f01c671ed4046893074768f127f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

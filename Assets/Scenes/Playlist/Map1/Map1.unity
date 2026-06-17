@@ -162,6 +162,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 803197086124147302, guid: 9df6f01c671ed4046893074768f127f8, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 1238438433}
     - target: {fileID: 2022705904860826697, guid: 9df6f01c671ed4046893074768f127f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1081,6 +1085,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: c6d2d60ed30b60e40a201a8ada56f39e, type: 3}
   record: 1
   map: {fileID: 1238438430}
+  play: 0
 --- !u!82 &1238438433
 AudioSource:
   m_ObjectHideFlags: 0
