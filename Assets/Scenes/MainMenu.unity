@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 250509892}
   - component: {fileID: 250509891}
   - component: {fileID: 250509890}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 432980487}
   - component: {fileID: 432980486}
   - component: {fileID: 432980485}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1817,6 +1817,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5167925059111895691, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5826056641483426609, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1835,7 +1839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6480709639723187321, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: raycastlayer.m_Bits
-      value: 59
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 6499517531677593257, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
@@ -2443,7 +2447,7 @@ GameObject:
   - component: {fileID: 685259308}
   - component: {fileID: 685259307}
   - component: {fileID: 685259311}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2478,7 +2482,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685259306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4002,7 +4006,7 @@ GameObject:
   - component: {fileID: 1074670704}
   - component: {fileID: 1074670703}
   - component: {fileID: 1074670702}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6159,7 @@ GameObject:
   - component: {fileID: 1912670788}
   - component: {fileID: 1912670787}
   - component: {fileID: 1912670786}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

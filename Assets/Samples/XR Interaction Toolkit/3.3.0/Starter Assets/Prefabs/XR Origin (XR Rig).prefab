@@ -1575,7 +1575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6981642495833523204
 Transform:
   m_ObjectHideFlags: 0
@@ -2505,7 +2505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7250354240990975901, guid: 4afd01c50d48f8a4eaec57d6a7aed86e, type: 3}
       propertyPath: raycastlayer.m_Bits
-      value: 59
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 9111419700869527892, guid: 4afd01c50d48f8a4eaec57d6a7aed86e, type: 3}
       propertyPath: m_IsActive
