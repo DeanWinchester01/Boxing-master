@@ -98,7 +98,7 @@ public class Obstacle : MonoBehaviour
 
 	public void Remove()
 	{
-        body.linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed);
+        body.linearVelocity = new Vector3(0, 0, -MainMenu.profile.speed*5);
 
         if (transform.position.z < GameObject.FindGameObjectWithTag("Player").transform.position.z-5)
         {

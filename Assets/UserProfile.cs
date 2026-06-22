@@ -10,7 +10,7 @@ public class UserProfile
 
     public UserProfile()
     {
-        speed = 5;
+        speed = 1;
         random = 4;
         volume = .5f;
         hand = true;

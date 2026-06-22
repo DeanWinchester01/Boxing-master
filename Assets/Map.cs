@@ -39,7 +39,7 @@ public class Map : MonoBehaviour
     {
         isPlaying = true;
         source.clip = song;
-        source.pitch = MainMenu.profile.speed / 5;
+        source.pitch = MainMenu.profile.speed;
         source.Play();
         laser.GetComponent<MeshRenderer>().enabled = false;
         countdown = song.length;
