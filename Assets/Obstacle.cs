@@ -22,6 +22,7 @@ public class Obstacle : MonoBehaviour
 	public Vector3 bottomRight;
 	public Vector3 leftSmash;
 	public Vector3 rightSmash;
+	public AudioSource audioSrc;
 
 
 	public void ColorBlock(Color color)
@@ -123,17 +124,26 @@ public class Obstacle : MonoBehaviour
             HandTracker tracker = collision.transform.GetComponent<HandTracker>();
             float speed = tracker.speed;
 
+			audioSrc.Play();
             accuracy = Vector3.Dot(transform.forward, (collision.transform.position - transform.position).normalized);
-			if (parentCode) {
-				parentCode.blocksHitCorrect += 1;
-				parentCode.consequtive += 1;
-				parentCode.accuracy += accuracy;
+			if(accuracy > 0.45)
+			{
+				if (parentCode) {
+					parentCode.blocksHitCorrect += 1;
+					parentCode.consequtive += 1;
+				}
+				else
+				{
+					secondParentCode.blocksHitCorrect += 1;
+					secondParentCode.consequtive += 1;
+				}
 			}
 			else
 			{
-				secondParentCode.blocksHitCorrect += 1;
-				secondParentCode.consequtive += 1;
-				secondParentCode.accuracy += accuracy;
+				if (parentCode)
+					parentCode.blocksHitWrong += 1;
+				else
+					secondParentCode.blocksHitWrong += 1;
 			}
 				dead = true;
 

@@ -22,6 +22,7 @@ public class Map : MonoBehaviour
 
     public int blocksMissed = 0;
     public int consequtive = 0;
+    public int blocksHitWrong;
     public int blocksHitCorrect = 0;
     public float accuracy = 0;
 
@@ -40,7 +41,7 @@ public class Map : MonoBehaviour
         source.clip = song;
         source.pitch = MainMenu.profile.speed / 5;
         source.Play();
-        laser.SetActive(false);
+        laser.GetComponent<MeshRenderer>().enabled = false;
         countdown = song.length;
         while (playTime < countdown)
         {
@@ -53,7 +54,7 @@ public class Map : MonoBehaviour
         MainMenu.profile.levelsComplete.Add(number);
         finished.SetActive(true);
         finished.GetComponent<Finish>().Display(this);
-        laser.SetActive(true);
+        laser.GetComponent<MeshRenderer>().enabled = true;
         source.pitch = MainMenu.profile.speed;
         SetHands();
     }

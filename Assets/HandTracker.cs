@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ public class HandTracker : MonoBehaviour
             print(value.isPressed);
             RaycastHit buttonHit;
             Debug.DrawRay(transform.position, transform.up);
-            Vector3 direction = (transform.up).normalized;
+            Vector3 direction = (transform.up - transform.right).normalized;
             if(Physics.Raycast(transform.position, direction, out buttonHit, float.MaxValue, raycastlayer))
             {
                 print("hit object");
@@ -39,9 +40,10 @@ public class HandTracker : MonoBehaviour
 
     void DrawRay()
     {
+        print("drawing");
         RaycastHit buttonHit;
         //Debug.DrawRay(transform.position, transform.up);
-        Vector3 direction = (transform.up).normalized;
+        Vector3 direction = (transform.up - transform.right).normalized;
         if (Physics.Raycast(transform.position, direction, out buttonHit, float.MaxValue, raycastlayer))
         {
             Vector3 endPoint = buttonHit.point;
@@ -79,7 +81,7 @@ public class HandTracker : MonoBehaviour
     
     
 
-    void FixedUpdate()
+    void Update()
     {
         TrackHand();
         DrawRay();

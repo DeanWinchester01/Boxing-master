@@ -319,6 +319,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6480709639723187321, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: raycastlayer.m_Bits
+      value: 59
+      objectReference: {fileID: 0}
     - target: {fileID: 6499517531677593257, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -21,9 +21,16 @@ public class PauseScreen : MonoBehaviour
     }
     void OnOpen()
     {
+        if(Time.timeScale < 1)
+        {
+            Play();
+            return;
+        }
         panel.gameObject.SetActive(true);
-        music.Pause();
         Time.timeScale = 0;
+        GameObject.FindGameObjectWithTag("Laser").gameObject.GetComponent<MeshRenderer>().enabled = true;
+        if(music)
+            music.Pause();
     }
 
     public void Back()
@@ -33,9 +40,11 @@ public class PauseScreen : MonoBehaviour
 
     public void Play()
     {
-        music.UnPause();
         Time.timeScale = 1;
         panel.gameObject.SetActive(false);
+        GameObject.FindGameObjectWithTag("Laser").gameObject.GetComponent<MeshRenderer>().enabled = false;
+        if (music)
+            music.UnPause();
     }
 
     public void ResetScene()
