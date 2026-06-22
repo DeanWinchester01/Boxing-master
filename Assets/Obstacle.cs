@@ -126,7 +126,7 @@ public class Obstacle : MonoBehaviour
 
 			audioSrc.Play();
             accuracy = Vector3.Dot(transform.forward, (collision.transform.position - transform.position).normalized);
-			if(accuracy > 0.45)
+			if(accuracy > 0.45 && GetComponent<MeshRenderer>().material.color == collision.transform.GetComponent<MeshRenderer>().material.color)
 			{
 				if (parentCode) {
 					parentCode.blocksHitCorrect += 1;
@@ -141,9 +141,15 @@ public class Obstacle : MonoBehaviour
 			else
 			{
 				if (parentCode)
+				{
 					parentCode.blocksHitWrong += 1;
+					parentCode.consequtive = 0;
+				}
 				else
+				{
 					secondParentCode.blocksHitWrong += 1;
+					secondParentCode.consequtive = 0;
+				}
 			}
 				dead = true;
 
