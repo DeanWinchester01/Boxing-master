@@ -43,6 +43,8 @@ public class Map : MonoBehaviour
         source.Play();
         laser.GetComponent<MeshRenderer>().enabled = false;
         countdown = song.length;
+        source.pitch = MainMenu.profile.speed;
+        SetHands();
         while (playTime < countdown)
         {
             print(((int)playTime).ToString()+"/"+((int)countdown).ToString());
@@ -55,8 +57,6 @@ public class Map : MonoBehaviour
         finished.SetActive(true);
         finished.GetComponent<Finish>().Display(this);
         laser.GetComponent<MeshRenderer>().enabled = true;
-        source.pitch = MainMenu.profile.speed;
-        SetHands();
     }
 
     void SetHands()
@@ -93,7 +93,7 @@ public class Map : MonoBehaviour
         //print(Application.isEditor);
         //if (Application.isEditor) return;
         if (isPlaying)
-            playTime += Time.deltaTime * MainMenu.profile.speed/5;
+            playTime += Time.deltaTime * MainMenu.profile.speed;
 
 
         if (timeStamps.Count == 0) return;
@@ -101,7 +101,7 @@ public class Map : MonoBehaviour
         //print(((int)playTime).ToString() + "\t\t" + (timeStamps[0] - (transform.position.z - 5) / MainMenu.profile.speed).ToString());
         print(timeStamps[0]);
         print((spawn.position.z - playerSpawn.position.z) / MainMenu.profile.speed);
-        if (playTime > (timeStamps[0] - (spawn.position.z - playerSpawn.position.z)/MainMenu.profile.speed))
+        if (playTime > (timeStamps[0] - (spawn.position.z - playerSpawn.position.z)/5*MainMenu.profile.speed))
         {
             timeStamps.RemoveAt(0);
             SpawnPunch();  

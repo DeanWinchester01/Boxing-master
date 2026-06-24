@@ -165,7 +165,7 @@ MonoBehaviour:
   bottomRight: {x: 0.5, y: -1, z: 0}
   leftSmash: {x: -0.5, y: 0, z: 0}
   rightSmash: {x: 0.5, y: 0, z: 0}
-  audioSrc: {fileID: 0}
+  audioSrc: {fileID: 7739058218637474926}
 --- !u!82 &7739058218637474926
 AudioSource:
   m_ObjectHideFlags: 0
