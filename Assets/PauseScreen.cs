@@ -35,6 +35,7 @@ public class PauseScreen : MonoBehaviour
 
     public void Back()
     {
+        Time.timeScale = 1;
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         transform.GetComponent<LoadMap>().OnLoad();
     }

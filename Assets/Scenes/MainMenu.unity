@@ -5518,7 +5518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   levelButton: {fileID: 3700680022890327041, guid: 70f4011b37d00e241b330383d99880a3, type: 3}
-  levelsAvailable: 30
+  levelsAvailable: 10
   player: {fileID: 731373259}
   menu: {fileID: 1829865075}
 --- !u!156049354 &1604490175

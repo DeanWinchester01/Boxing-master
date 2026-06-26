@@ -141,8 +141,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 15.852539, y: 10.846825, z: 1}
-  m_Center: {x: -0.13588715, y: -0.047634125, z: 0}
+  m_Size: {x: 14.844864, y: 10.27216, z: 1}
+  m_Center: {x: -0.63972473, y: 0.23969841, z: 0}
 --- !u!1 &2506750637928855924
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &380554705704388804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   textContent: {fileID: 687731268369445636}
   backButton: {fileID: 6480638524227570052}
-  player: {fileID: 0}
+  laser: {fileID: 0}
 --- !u!114 &2436013619718053675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 2467895875007717645}
   - component: {fileID: 8192542555405736317}
   - component: {fileID: 687731268369445636}
+  - component: {fileID: 1518364358253688105}
   m_Layer: 5
   m_Name: Information
   m_TagString: Untagged
@@ -633,3 +634,24 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!65 &1518364358253688105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235068277476514158}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 108.86598, y: 63.616085, z: 5.4963074}
+  m_Center: {x: -0.840538, y: 4.991602, z: 5.8712006}
