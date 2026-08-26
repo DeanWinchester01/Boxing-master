@@ -17,10 +17,11 @@ public class LoadMap : MonoBehaviour
         }
         else
         {
-            string map = transform.name.Substring(transform.name.Length - 1);
-            string sceneAddress = "Scenes/Playlist/Map" + map + "/Map" + map;
-            print(sceneAddress);
-            SceneManager.LoadScene(sceneAddress);
+            string map = Preview.mapFolder;
+            //string map = transform.name.Substring(transform.name.Length - 1);
+            //string sceneAddress = "Scenes/Playlist/Map" + map + "/Map" + map;
+            //print(sceneAddress);
+            SceneManager.LoadScene(map);
         }
     }
 }

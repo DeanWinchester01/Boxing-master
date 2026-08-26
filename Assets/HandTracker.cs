@@ -40,7 +40,6 @@ public class HandTracker : MonoBehaviour
 
     void DrawRay()
     {
-        print("drawing");
         RaycastHit buttonHit;
         //Debug.DrawRay(transform.position, transform.up);
         Vector3 direction = (transform.up - transform.right).normalized;

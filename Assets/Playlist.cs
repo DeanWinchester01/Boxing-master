@@ -42,7 +42,8 @@ public class Playlist : MonoBehaviour
                 y+= level.GetComponent<RectTransform>().localScale.y + 0.5f;
                 x = 0;
             }
-            level.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "Level " + i.ToString();
+            level.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "Map " + i.ToString();
+            level.GetComponent<Preview>().map = i;
             //level.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshPro>().text = "Level " + i.ToString();
             //level.transform.parent = transform;
         }

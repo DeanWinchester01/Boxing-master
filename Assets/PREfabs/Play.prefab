@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3423659036654817290}
   - component: {fileID: 5265657318742561308}
   - component: {fileID: 700657520031919790}
+  - component: {fileID: -8844958624741254597}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -123,9 +124,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 700657520031919790}
-        m_TargetAssemblyTypeName: LoadMap, Assembly-CSharp
-        m_MethodName: OnLoad
+      - m_Target: {fileID: -8844958624741254597}
+        m_TargetAssemblyTypeName: Preview, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -163,12 +164,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3700680022890327041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45b890e7460fdbc4696272e793c77950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   map: 
+--- !u!114 &-8844958624741254597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700680022890327041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d183ae2f9ee57b54eae05da9e38c2fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Preview
+  map: 0
 --- !u!1 &5210114306913924711
 GameObject:
   m_ObjectHideFlags: 0
