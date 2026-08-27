@@ -4,12 +4,32 @@ using UnityEditor;
 using System.IO;
 using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Preview : MonoBehaviour
 {
     public int map;
     static Coroutine process;
     public static string mapFolder;
+    Button button;
+    GameObject info;
+
+    private string ReadSong(int map)
+    {
+        string sceneAddress = "Scenes/Playlist/Map" + map;
+        string unityAdress = Application.dataPath;//gets unitys path to assets
+        string[] files = Directory.GetFiles(unityAdress + "/" + sceneAddress);
+        string songAddress = "";
+        for (int i = 0; i < files.Length; i++)
+        {
+            if (!files[i].Contains("mp3")) continue;
+            if (files[i].Contains(".meta")) continue;
+            songAddress = files[i];
+        }
+        return songAddress;
+    }
+
     static private string CalculateMinutes(float time)
     {
         int minutes = 0;
@@ -34,6 +54,7 @@ public class Preview : MonoBehaviour
         Transform length = infoTab.Find("Length");
         print("got items");
 
+        /*
         string sceneAddress = "Scenes/Playlist/Map" + map;
         string unityAdress = Application.dataPath;//gets unitys path to assets
         string[] files = Directory.GetFiles(unityAdress+"/"+sceneAddress);
@@ -46,8 +67,10 @@ public class Preview : MonoBehaviour
             songAddress = files[i];
             songName = songAddress.Split("\\")[1];
             songName = songName.Substring(0, songName.Length - 4);
-        }
-
+        }*/
+        string songAddress = ReadSong(map);
+        string songName = songAddress.Split("\\")[1];
+        songName = songName.Substring(0, songName.Length - 4);
         //read in audio clip when it's outside resource folder
         AudioClip clip;
         using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("file://" +songAddress, AudioType.MPEG))
@@ -70,6 +93,7 @@ public class Preview : MonoBehaviour
         audioSource.clip = clip;
         audioSource.time = 15;
         audioSource.Play();
+        info.SetActive(true);
 
         yield return new WaitForSeconds(10);
         audioSource.Stop();
@@ -84,5 +108,20 @@ public class Preview : MonoBehaviour
             StopCoroutine(process);
         }
         process = StartCoroutine(PlayPreview(map));
+    }
+
+    void DisplaySong()
+    {
+        TextMeshProUGUI buttonText = transform.Find("Text").GetComponent<TextMeshProUGUI>();
+        string songAddress = ReadSong(map);
+        string songName = songAddress.Split("\\")[1];
+        songName = songName.Substring(0, songName.Length - 4);
+        buttonText.text = songName;
+    }
+
+    private void Start()
+    {
+        info = transform.parent.Find("Info").gameObject;
+        DisplaySong();
     }
 }

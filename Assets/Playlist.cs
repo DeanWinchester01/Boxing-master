@@ -30,10 +30,10 @@ public class Playlist : MonoBehaviour
             }
             else
             {
-                level.GetComponent<Image>().color = Color.red;
+                //level.GetComponent<Image>().color = Color.red;
             }
             level.transform.SetParent(transform, false);
-            level.GetComponent<RectTransform>().localPosition = new Vector3(x - 6, -y + 5, 0);
+            level.GetComponent<RectTransform>().localPosition = new Vector3(x - 6.25f, -y + 4.5f, 0);//magic numbers to place buttons neatly
             level.name = "Map" + i.ToString();
             x+= level.GetComponent<RectTransform>().localScale.x + 0.5f;
 
@@ -42,7 +42,7 @@ public class Playlist : MonoBehaviour
                 y+= level.GetComponent<RectTransform>().localScale.y + 0.5f;
                 x = 0;
             }
-            level.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "Map " + i.ToString();
+            //level.transform.Find("Text").GetComponent<TextMeshProUGUI>().text = "Map " + i.ToString();
             level.GetComponent<Preview>().map = i;
             //level.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshPro>().text = "Level " + i.ToString();
             //level.transform.parent = transform;
