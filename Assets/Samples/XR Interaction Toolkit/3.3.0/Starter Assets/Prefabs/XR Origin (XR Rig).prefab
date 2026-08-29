@@ -2523,6 +2523,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5608762748659901649, guid: 4afd01c50d48f8a4eaec57d6a7aed86e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5862791167579638161}
+    - targetCorrespondingSourceObject: {fileID: 5608762748659901649, guid: 4afd01c50d48f8a4eaec57d6a7aed86e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5294313383166583347}
   m_SourcePrefab: {fileID: 100100000, guid: 4afd01c50d48f8a4eaec57d6a7aed86e, type: 3}
 --- !u!1 &8122279108311043893 stripped
 GameObject:
@@ -2551,6 +2554,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 688604830460230413, guid: 22888fd8594e79043836e078bc97961e, type: 3}
+--- !u!114 &5294313383166583347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122279108311043893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticImpulsePlayer
+  m_HapticOutput:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: Haptic
+      m_Type: 2
+      m_ExpectedControlType: 
+      m_Id: 117d07c0-8615-4add-b3b0-474e5c4d4400
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+  m_AmplitudeMultiplier: 1
 --- !u!4 &8931748001484150159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5088369029440175723, guid: 4afd01c50d48f8a4eaec57d6a7aed86e, type: 3}
@@ -2792,6 +2821,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca645c57575669c418d3368459af8ae4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3123972185569388339}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca645c57575669c418d3368459af8ae4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5463966463068274904}
   m_SourcePrefab: {fileID: 100100000, guid: ca645c57575669c418d3368459af8ae4, type: 3}
 --- !u!1 &6301829723199011749 stripped
 GameObject:
@@ -2841,6 +2873,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6589900111433382296, guid: ca645c57575669c418d3368459af8ae4, type: 3}
+--- !u!114 &5463966463068274904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6301829723199011749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticImpulsePlayer
+  m_HapticOutput:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: Haptic
+      m_Type: 2
+      m_ExpectedControlType: 
+      m_Id: 6fa57ee3-485d-462e-834e-4caf41d43f06
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: -8785819595477538065, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+  m_AmplitudeMultiplier: 1
 --- !u!4 &6647110818191515935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ca645c57575669c418d3368459af8ae4, type: 3}

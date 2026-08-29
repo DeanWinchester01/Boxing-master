@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 #nullable enable
 public class Obstacle : MonoBehaviour
@@ -122,12 +123,14 @@ public class Obstacle : MonoBehaviour
         if (collision.transform.name.Contains("Glove"))
         {
             HandTracker tracker = collision.transform.GetComponent<HandTracker>();
+			HapticImpulsePlayer feedback = collision.transform.GetComponent<HapticImpulsePlayer>();
             float speed = tracker.speed;
 
 			audioSrc.Play();
             accuracy = Vector3.Dot(transform.forward, (collision.transform.position - transform.position).normalized);
 			if(accuracy > 0.45 && GetComponent<MeshRenderer>().material.color == collision.transform.GetComponent<MeshRenderer>().material.color)
 			{
+				feedback.SendHapticImpulse(0.1f, 0.1f);
 				if (parentCode) {
 					parentCode.blocksHitCorrect += 1;
 					parentCode.consequtive += 1;
@@ -140,6 +143,7 @@ public class Obstacle : MonoBehaviour
 			}
 			else
 			{
+				feedback.SendHapticImpulse(1, .5f);
 				if (parentCode)
 				{
 					parentCode.blocksHitWrong += 1;
